@@ -95,7 +95,10 @@ public class SearchResultsMB {
         Object attrDisplayKey;
         
             for(String attr : attributes){
+                
                 if(attr.equals("ClientId"))
+                    continue;
+                if(attr.equals("Returntype"))
                     continue;
                 
                 attrVal = getAttributeValue(attr);

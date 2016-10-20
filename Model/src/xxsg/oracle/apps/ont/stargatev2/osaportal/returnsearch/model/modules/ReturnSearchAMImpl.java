@@ -144,7 +144,7 @@ public class ReturnSearchAMImpl extends ApplicationModuleImpl implements ReturnS
     public void searchAction(){
         Row currentRow = getReturnSearchParams1().first();
         ViewObjectImpl resultVO = getHeaderResultsVO1();
-        resultVO.setWhereClause(null);
+         resultVO.setWhereClause(null);
         
 //        resultVO.setApplyViewCriteriaName();
         resultVO.setNamedWhereClauseParam("p_return_number", currentRow.getAttribute(0));
@@ -162,8 +162,7 @@ public class ReturnSearchAMImpl extends ApplicationModuleImpl implements ReturnS
         resultVO.setNamedWhereClauseParam("p_service_request", currentRow.getAttribute(12));
         resultVO.setNamedWhereClauseParam("p_return_date_from", currentRow.getAttribute(13));
         resultVO.setNamedWhereClauseParam("p_return_date_to", currentRow.getAttribute(14));
-        //resultVO.setNamedWhereClauseParam("p_order_type", currentRow.getAttribute(15));
-        
+      
         resultVO.executeQuery();
     }
     

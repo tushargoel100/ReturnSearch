@@ -63,6 +63,7 @@ public class ReturnSearchParamsVORowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
     public static final int RETURNNUMBER = AttributesEnum.Returnnumber.index();
     public static final int ORDERREF = AttributesEnum.Orderref.index();
     public static final int CLIENT = AttributesEnum.Client.index();
@@ -349,6 +350,7 @@ public class ReturnSearchParamsVORowImpl extends ViewRowImpl {
      */
     public void setOrdertype(String value) {
         setAttributeInternal(ORDERTYPE, value);
+        System.out.println("this is vinay lov set "+ value);
     }
 
     /**

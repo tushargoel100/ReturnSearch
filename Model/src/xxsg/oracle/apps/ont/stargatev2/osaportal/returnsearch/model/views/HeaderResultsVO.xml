@@ -84,34 +84,35 @@
     Name="p_email"
     Kind="viewcriteria"
     Type="java.lang.String"/>
-  <SQLQuery><![CDATA[SELECT oeh.header_id, ot.NAME returnType, oeh.ordered_date returnDate, 
-       oeh.order_number returnNumber, party.party_id, hca.cust_account_id, 
-       party.party_name client, status.meaning status, 
-       oe_oe_totals_summary.prt_order_total (oeh.header_id) returnAmount, 
-       oeh.cust_po_number orderRef, 
-       xxstar_osa_util.get_header_holds_nar (oeh.header_id) blockTail,                         
-        '' payment_mehtod_code,                          
-        '' paymentMethod,                          
-        oeh.tp_attribute10 refund_mehtod_code, 
-       (SELECT meaning 
-          FROM fnd_lookup_values 
-         WHERE lookup_type(+) = 'XXSTAR_REFUND_METHOD' 
-           AND LANGUAGE = USERENV ('LANG') 
-           AND lookup_code = oeh.tp_attribute10) reimbursmentMethod, 
-       oeh.tp_attribute12 reimbursmentDate, oeh.attribute4 loyalty_card, 
-       oeh.global_attribute14 service_request, hca.cust_account_id cutomerId, 
-       xxstar_osa_util.get_order_shipto_email (party.party_id) emailId 
-  FROM oe_transaction_types_tl ot, 
-       oe_order_headers_all oeh, 
-       hz_parties party, 
-       hz_cust_accounts hca, 
-       oe_lookups status 
-WHERE 1 = 1 
-   AND hca.party_id = party.party_id 
-   AND ot.transaction_type_id = oeh.order_type_id 
-   AND ot.LANGUAGE = USERENV ('LANG') 
-   AND oeh.flow_status_code = status.lookup_code 
-   AND status.lookup_type = 'FLOW_STATUS' 
+  <SQLQuery><![CDATA[SELECT oeh.header_id, ot.NAME returnType, oeh.ordered_date returnDate,  
+       oeh.order_number returnNumber, party.party_id, hca.cust_account_id,  
+       party.party_name client, status.meaning status,  
+       oe_oe_totals_summary.prt_order_total (oeh.header_id) returnAmount,  
+       oeh.cust_po_number orderRef,  
+       xxstar_osa_util.get_header_holds_nar (oeh.header_id) blockTail,                          
+        '' payment_mehtod_code,                           
+        '' paymentMethod,                           
+        oeh.tp_attribute10 refund_mehtod_code,  
+       (SELECT meaning  
+          FROM fnd_lookup_values  
+         WHERE lookup_type(+) = 'XXSTAR_REFUND_METHOD'  
+           AND LANGUAGE = USERENV ('LANG')  
+           AND lookup_code = oeh.tp_attribute10) reimbursmentMethod,  
+       oeh.tp_attribute12 reimbursmentDate, oeh.attribute4 loyalty_card,  
+       oeh.global_attribute14 service_request, hca.cust_account_id cutomerId,  
+       xxstar_osa_util.get_order_shipto_email (party.party_id) emailId,  
+       ot.TRANSACTION_TYPE_ID 
+  FROM oe_transaction_types_tl ot,  
+       oe_order_headers_all oeh,  
+       hz_parties party,  
+       hz_cust_accounts hca,  
+       oe_lookups status  
+WHERE 1 = 1  
+   AND hca.party_id = party.party_id  
+   AND ot.transaction_type_id = oeh.order_type_id  
+   AND ot.LANGUAGE = USERENV ('LANG')  
+   AND oeh.flow_status_code = status.lookup_code  
+   AND status.lookup_type = 'FLOW_STATUS'  
    AND oeh.sold_to_org_id = hca.cust_account_id]]></SQLQuery>
   <ViewAttribute
     Name="HeaderId"
@@ -365,6 +366,16 @@ WHERE 1 = 1
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
+    Name="TransactionTypeId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="TRANSACTION_TYPE_ID"
+    Expression="TRANSACTION_TYPE_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
     Name="Selected"
     IsSelected="false"
     IsPersistent="false"
@@ -403,14 +414,6 @@ WHERE 1 = 1
       <ViewCriteriaRow
         Name="HeaderResultsVOSubCriteria1_row_0"
         UpperColumns="1">
-        <ViewCriteriaItem
-          Name="Returntype"
-          ViewAttribute="Returntype"
-          Operator="="
-          Conjunction="AND"
-          Value=":p_return_type"
-          IsBindVarValue="true"
-          Required="Optional"/>
         <ViewCriteriaItem
           Name="Returndate"
           ViewAttribute="Returndate"
@@ -494,6 +497,14 @@ WHERE 1 = 1
           Operator="="
           Conjunction="AND"
           Value=":p_email"
+          IsBindVarValue="true"
+          Required="Optional"/>
+        <ViewCriteriaItem
+          Name="TransactionTypeId"
+          ViewAttribute="TransactionTypeId"
+          Operator="="
+          Conjunction="AND"
+          Value=":p_return_type"
           IsBindVarValue="true"
           Required="Optional"/>
         <ViewCriteriaItem

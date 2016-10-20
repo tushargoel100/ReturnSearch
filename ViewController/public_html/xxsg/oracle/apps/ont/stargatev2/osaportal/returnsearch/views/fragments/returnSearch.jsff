@@ -111,12 +111,6 @@
                 <f:selectItems value="#{bindings.Returntype.items}" id="si2"/>
                 <f:validator binding="#{bindings.Returntype.validator}"/>
               </af:selectOneChoice>
-              <!--<af:selectOneChoice id="soc2" styleClass="input-box"
-                                  unselectedLabel="#{bundle['XXSG_OSA_SELECT_RETURN_TYPE']} " autoSubmit="true"
-                                  value="#{bindings.Ordertype.inputValue}">
-                <f:selectItems value="#{bindings.Ordertype.items}" id="si2"/>
-                <f:validator binding="#{bindings.Ordertype.validator}"/
-              </af:selectOneChoice>-->
             </af:panelGroupLayout>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl12" layout="horizontal" styleClass="AFMasonryTileSize2x1"
@@ -214,18 +208,6 @@
                 <af:convertDateTime pattern="MM-dd-yyyy"/>
                 <af:validateDateTimeRange minimum="#{bindings.Fromdate.inputValue}"/>
               </af:inputDate>
-            </af:panelGroupLayout>
-          </af:panelGroupLayout>
-          <af:panelGroupLayout id="pgl16" layout="horizontal" styleClass="AFMasonryTileSize2x1"
-                               inlineStyle="height:inherit;" valign="top" halign="left">
-            <af:panelGroupLayout id="pgl27" layout="vertical">
-              <af:outputText value="#{bundle['XXSG_OSA_ORDER_TYPE']} " id="ot14" styleClass="HeadingPage2"/>
-              <af:selectOneChoice id="soc3" styleClass="input-box"
-                                  unselectedLabel="#{bundle['XXSG_OSA_SELECT_ORDER_TIPO']} "
-                                  value="#{bindings.Ordertype.inputValue}" autoSubmit="true">
-                <f:selectItems value="#{bindings.Ordertype.items}" id="si3"/>
-                <f:validator binding="#{bindings.Ordertype.validator}"/>
-              </af:selectOneChoice>
             </af:panelGroupLayout>
           </af:panelGroupLayout>
         </af:masonryLayout>

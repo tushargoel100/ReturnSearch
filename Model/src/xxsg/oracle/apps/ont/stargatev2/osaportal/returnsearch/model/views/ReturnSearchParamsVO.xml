@@ -90,25 +90,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_Ordertype"
-    ListVOName="TransactionTypeLOV1"
-    ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Ordertype"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="TransactionTypeId"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_Returnreason"
     ListVOName="ReturnReasonVC"
     ListRangeSize="-1"
@@ -216,8 +197,12 @@
       <Item Value="Returntype"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Ordertype"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="TransactionTypeId"/>
+      <Item Value="Name"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
@@ -591,20 +576,14 @@ from dual]]></SQLQuery>
     ColumnType="VARCHAR2"
     AliasName="ORDERTYPE"
     Expression="ORDERTYPE"
-    SQLType="VARCHAR"
-    LOVName="LOV_Ordertype">
+    SQLType="VARCHAR">
     <Properties>
       <CustomProperties>
         <Property
           Name="resource_hint"
           Value="XXSG_OSA_RETURN_TYPE"/>
       </CustomProperties>
-      <SchemaBasedProperties>
-        <AUTOSUBMIT
-          Value="true"/>
-        <CONTROLTYPE
-          Value="choice"/>
-      </SchemaBasedProperties>
+      <SchemaBasedProperties/>
     </Properties>
   </ViewAttribute>
   <ViewAttribute
