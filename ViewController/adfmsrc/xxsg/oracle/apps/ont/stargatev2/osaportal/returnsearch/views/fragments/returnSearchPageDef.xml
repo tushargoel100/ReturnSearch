@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="returnSearchPageDef"
+                Package="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.views.fragments">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ReturnSearchParams1" RangeSize="25" DataControl="ReturnSearchAMDataControl"
+              id="ReturnSearchParams1Iterator"/>
+    <iterator Binds="HeaderResultsVO1" RangeSize="5" DataControl="ReturnSearchAMDataControl"
+              id="HeaderResultsVO1Iterator"/>
+    <iterator Binds="LineResultsVO1" RangeSize="25" DataControl="ReturnSearchAMDataControl"
+              id="LineResultsVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ReturnSearchParams1Iterator" id="Orderref">
+      <AttrNames>
+        <Item Value="Orderref"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnSearchParams1Iterator" id="Returnnumber">
+      <AttrNames>
+        <Item Value="Returnnumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnSearchParams1Iterator" id="Articlecode">
+      <AttrNames>
+        <Item Value="Articlecode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnSearchParams1Iterator" id="Loyaltycard">
+      <AttrNames>
+        <Item Value="Loyaltycard"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnSearchParams1Iterator" id="Rs">
+      <AttrNames>
+        <Item Value="Rs"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnSearchParams1Iterator" id="Fromdate">
+      <AttrNames>
+        <Item Value="Fromdate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnSearchParams1Iterator" id="Todate">
+      <AttrNames>
+        <Item Value="Todate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ReturnSearchParams1Iterator" StaticList="false" Uses="LOV_Status" id="Status"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ReturnSearchParams1Iterator" StaticList="false" Uses="LOV_Returnreason" id="Returnreason"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="ReturnSearchParams1Iterator" StaticList="false" Uses="LOV_Paymentmethod" id="Paymentmethod"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="HeaderResultsVO1Iterator" id="HeaderResultsVO1">
+      <nodeDefinition DefName="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.views.HeaderResultsVO"
+                      Name="HeaderResultsVO10">
+        <AttrNames>
+          <Item Value="Selected"/>
+          <Item Value="Returntype"/>
+          <Item Value="Returndate"/>
+          <Item Value="Returnnumber"/>
+          <Item Value="Client"/>
+          <Item Value="Status"/>
+          <Item Value="Returnamount"/>
+          <Item Value="Orderref"/>
+          <Item Value="Blocktail"/>
+          <Item Value="Paymentmethod"/>
+          <Item Value="Reimbursmentmethod"/>
+          <Item Value="Reimbursmentdate"/>
+          <Item Value="CustAccountId"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="Lines"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.views.LineResultsVO"
+                      Name="HeaderResultsVO11">
+        <AttrNames>
+          <Item Value="InvoiceNumber"/>
+          <Item Value="ReturnReason"/>
+          <Item Value="ReturnReasonCode"/>
+          <Item Value="ShippingAddress"/>
+          <Item Value="ShippingMethod"/>
+          <Item Value="SkuNumber"/>
+          <Item Value="WebUserId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="LineResultsVO1Iterator" id="HeaderId">
+      <AttrNames>
+        <Item Value="HeaderId"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="resetAction" RequiresUpdateModel="true" Action="invokeMethod" MethodName="resetAction"
+                  IsViewObjectMethod="false" DataControl="ReturnSearchAMDataControl"
+                  InstanceName="data.ReturnSearchAMDataControl.dataProvider"/>
+    <methodAction id="searchAction" RequiresUpdateModel="true" Action="invokeMethod" MethodName="searchAction"
+                  IsViewObjectMethod="false" DataControl="ReturnSearchAMDataControl"
+                  InstanceName="data.ReturnSearchAMDataControl.dataProvider"/>
+    <listOfValues IterBinding="ReturnSearchParams1Iterator" StaticList="false" Uses="LOV_Client" id="Client"/>
+    <methodAction id="throwException" RequiresUpdateModel="true" Action="invokeMethod" MethodName="throwException"
+                  IsViewObjectMethod="false" DataControl="ReturnSearchAMDataControl"
+                  InstanceName="data.ReturnSearchAMDataControl.dataProvider">
+      <NamedData NDName="message" NDValue="#{pageFlowScope.SearchResultsMB.msg}" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="ReturnSearchParams1Iterator" id="ClientId">
+      <AttrNames>
+        <Item Value="ClientId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ReturnSearchParams1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="ReturnSearchParams1Iterator" StaticList="false" Uses="LOV_Reimbursmentmethod"
+          id="Reimbursmentmethod" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <listOfValues IterBinding="ReturnSearchParams1Iterator" StaticList="false" Uses="LOV_Webuserid" id="Webuserid"/>
+    <methodAction id="executeEmptyRowset" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="executeEmptyRowset" IsViewObjectMethod="false" DataControl="ReturnSearchAMDataControl"
+                  InstanceName="data.ReturnSearchAMDataControl.dataProvider"/>
+    <list Uses="LOV_Returntype" StaticList="false" IterBinding="ReturnSearchParams1Iterator" id="Returntype"/>
+    <attributeValues IterBinding="ReturnSearchParams1Iterator" id="Ordertype">
+      <AttrNames>
+        <Item Value="Ordertype"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
