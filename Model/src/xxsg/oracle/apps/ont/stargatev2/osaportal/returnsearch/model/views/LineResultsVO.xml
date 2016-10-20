@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="LineResultsVO"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.views.LineResultsVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[select distinct oel.header_id,		             
+        oel.RETURN_REASON_CODE as return_reason_code,             
+        (select meaning              
+            from fnd_lookup_values             
+            where LOOKUP_TYPE(+) = 'CREDIT_MEMO_REASON'             
+            AND LANGUAGE = USERENV ('LANG')             
+            and attribute2 is not null             
+            and lookup_code = oel.return_reason_code             
+        ) return_reason,             
+        ship_method.meaning shipping_method,               
+        oel.ordered_item sku_number,             
+        xxstar_osa_util.get_order_shipto_addr (oel.header_id,               
+                                              hca.party_id               
+                                             ) shipping_address,             
+        --xxstar_osa_util.get_invoice_number (oeh.order_number, oel.org_id) invoice_number,      
+        '' invoice_number,     
+        hca.attribute4 web_user_id             
+        from              
+            hz_cust_accounts hca,             
+            oe_ship_methods_v ship_method,             
+            oe_order_lines_all oel             
+        where 1=1                                       
+            AND oel.sold_to_org_id = hca.cust_account_id(+)              
+            AND oel.shipping_method_code = ship_method.lookup_code(+)             
+            AND ship_method.lookup_type(+) = 'SHIP_METHOD']]></SQLQuery>
+  <ViewAttribute
+    Name="HeaderId"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="HEADER_ID"
+    Expression="HEADER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ReturnReasonCode"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="RETURN_REASON_CODE"
+    Expression="RETURN_REASON_CODE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ReturnReason"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="RETURN_REASON"
+    Expression="RETURN_REASON"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ShippingMethod"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="80"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="SHIPPING_METHOD"
+    Expression="SHIPPING_METHOD"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SkuNumber"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="2000"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="SKU_NUMBER"
+    Expression="SKU_NUMBER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2000"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ShippingAddress"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="4000"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="SHIPPING_ADDRESS"
+    Expression="SHIPPING_ADDRESS"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="InvoiceNumber"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="32"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="INVOICE_NUMBER"
+    Expression="INVOICE_NUMBER"
+    SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="WebUserId"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="WEB_USER_ID"
+    Expression="WEB_USER_ID"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="HeaderId"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="Headers"
+    ViewLink="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.viewlinks.HeaderLinesVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

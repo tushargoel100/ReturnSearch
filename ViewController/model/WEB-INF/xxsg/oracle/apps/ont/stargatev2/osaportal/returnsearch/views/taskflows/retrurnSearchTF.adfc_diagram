@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">returnSearch</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">672.0</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>returnSearch&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">200.59766</property>
+      <property
+         name="page">/xxsg/oracle/apps/ont/stargatev2/osaportal/returnsearch/views/fragments/returnSearch.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <MethodCall
+      id="MethodCall3">
+      <property
+         name="activityId">init</property>
+      <property
+         name="x">302.5</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>init&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">317.0459</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="MethodCall3"
+      to="View2">
+      <property
+         name="fromOutcome">init</property>
+      <property
+         name="sdm:polyPoints">R50,344.14505,316.6953,630.355,200.24707,L50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall5">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CustomerDetailTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">CustomerDetailTF</property>
+      <property
+         name="x">717.67676</property>
+      <property
+         name="y">425.7754</property>
+      <property
+         name="documentReference">/WEB-INF/xxsg/oracle/apps/ont/stargatev2/osaportal/osacustomerdetail/view/taskflows/OSACustomerDetailTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">CustomerDetailTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="TaskFlowCall5">
+      <property
+         name="fromOutcome">callCust</property>
+      <property
+         name="sdm:polyPoints">B50,672.0,254.24707,717.67676,371.7754,T50</property>
+   </ControlFlowCase>
+</SDM>

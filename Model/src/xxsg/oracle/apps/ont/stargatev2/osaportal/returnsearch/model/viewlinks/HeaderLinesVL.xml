@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HeaderLinesVL"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.viewlinks.HeaderLinesVL_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="Headers"
+    Cardinality="1"
+    Source="true"
+    Owner="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.views.HeaderResultsVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Headers"/>
+      <Attr Name="_accessor" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.views.HeaderResultsVO.HeaderId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Lines"
+    Cardinality="-1"
+    Owner="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.views.LineResultsVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Lines"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.views.LineResultsVO.HeaderId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

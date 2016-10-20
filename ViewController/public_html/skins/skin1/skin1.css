@@ -1,0 +1,525 @@
+@charset "UTF-8";
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+
+af|panelSplitter {
+    -tr-divider-size: 37;
+    marquee-direction: reverse;
+}
+
+af|panelSplitter::horizontal-divider {
+    background-color: #ededef;
+    width: 37px;
+}
+
+af|panelSplitter::horizontal-restore-icon {
+    height: 35px;
+    width: 22px;
+    content: url("../../image/icon/arrow-white-divider-right.png");
+    background-color: #EDEDEF;
+    cursor: pointer;
+}
+
+af|panelSplitter::horizontal-collapse-icon {
+   /* content: url("../../image/icon/arrow-white-divider-left.png");*/
+    border: none;
+    border-color: transparent;
+    opacity: 1;
+    height: 35px;
+    width: 22px;
+    background: none;
+}
+
+af|panelSplitter::horizontal-icon-container {
+    border: none;
+    border-color: transparent;
+    visibility: visible;;
+    appearance: normal;
+    height: auto;
+    top: auto;
+}
+
+af|panelSplitter::horizontal-icon-style {
+    background-image: url("../../image/icon/arrow-white-divider-left.png");
+   opacity:0;
+    width: 0px;
+    height: 0px;
+}
+
+.xqt.p_AFDisclosed {
+    background-image: url("../../image/icon/arrow-white-divider-left.png");
+    background-repeat: no-repeat;
+    background-origin: content-box;
+}
+.xqt {
+    background-image: url("../../image/icon/arrow-white-divider-right.png");
+    background-repeat: no-repeat;
+    background-origin: content-box;
+        padding-left: 10px;
+                padding-right: 10px;
+
+        background-position: center;
+}
+
+/*panel splitter */
+
+af|inputText::content:hover, af|inputText::content:selected, af|inputText::content:focus {
+    height: 45px;
+    width: 210px;
+    font-family: '' Arial narrow '';
+    font-size: 18px;
+    color: #717171;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color: #f1f0f0;
+}
+
+af|inputText::content {
+    height: 45px;
+    width: 210px;
+    font-family: '' Arial narrow '';
+    font-size: 18px;
+    color: #e2dede;
+    background-color: #FFFFFF;
+}
+
+af|inputComboboxListOfValues::content:hover, af|inputText::content:selected, af|inputText::content:focus {
+    height: 45px;
+    width: 165px;
+    font-family: '' Arial narrow '';
+    font-size: 18px;
+    color: #717171;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color: #f1f0f0;
+}
+
+af|inputComboboxListOfValues::content {
+    height: 45px;
+    width: 165px;
+    font-family: '' Arial narrow '';
+    font-size: 18px;
+    color: #e2dede;
+    background-color: #FFFFFF;
+}
+
+
+af|inputText::label {
+    color: #717171;
+}
+/* input text*/
+/* input date*/
+af|inputDate::content {
+    width: 112px;
+    height: 45px;
+    font-size: 18px;
+    color: #717171;
+    background-color: #FFFFFF;
+}
+af|table.customcolheader af|column::column-header-cell 
+{  
+background-color: #323232;
+font-size: 15px;
+color: #FFFFFF;
+font-family: ''Arial narrow''; 
+}
+.colorfulAccordian af|panelAccordion::header{
+  background: #000000; 
+  font-size: 18px;
+}
+
+/*af|table::disclosed-icon-style {
+    background-image:  url("../../image/u238.png"); 
+    -tr-inhibit: url("../../image/u238.png"); 
+}*/
+
+.colorfulAccordian af|panelAccordion::header-title { 
+    color:#FFFFFF; 
+    background-color: #000000; 
+}
+
+.testcolorfulAccordian af|panelAccordion::header{
+  background: #000000; 
+  font-size: 18px;
+}
+
+.colorfulAccordian af|panelAccordion::header-disclose {
+    background-color: #000000; 
+}
+
+.colorfulAccordian af|panelAccordion::header-subsequent {
+    background-color: #000000; 
+}
+
+.colorfulAccordian af|panelAccordion::header-toolbar {
+    background-color: #000000; 
+}
+af|table::data-table-VH-lines af|column::data-cell {
+    background-color: #F1F1F1;
+    height: 35px;
+    font-size: 11px;
+    border: white 1px solid;
+    padding-right: 0px;
+}
+.colorfulAccordian1 af|panelAccordion::header-toolbar {
+    background-color: #000000; 
+}
+
+
+af|inputDate::content:hover, af|inputDate::content:selected, af|inputDate::content:focus {
+    width: 112px;
+    height: 45px;
+    font-size: 18px;
+    color: #717171;
+    background-color: #F1F0F0;
+}
+
+af|inputDate::launch-icon-style {
+    color: #e2dede;
+}
+
+af|inputDate::label {
+    color: #717171;
+}
+/* input date*/
+af|column::column-header-cell {
+    background-color: #323232;
+    color: #ffffff;
+    font-family: 'Arial narrow';
+    font-size: 15px;
+    border: none;
+    height: 46px;
+    text-align: center;
+}
+
+.xsz, .xsx
+{
+      border-color: gray;
+}
+.xqy{
+    visibility:hidden;
+}
+
+af|table::data-table-VH-lines af|column::data-cell {
+    background-color: #F1F1F1;
+    height: 35px;
+    font-size: 11px;
+    border: white 1px solid;
+    padding-right: 0px;
+}
+
+af|table::data-row:selected:focused, af|table::data-row:selected:focused {
+    font-size: 15px;
+    background-color: #F6F6F6 #FFFFFF;
+    color: #323232;
+    border-color: #F6F6F6;
+}
+
+af|button {
+    width: auto;
+    height: 45px;
+}
+
+af|inputListOfValues::search-icon-style {
+    height: 44px;
+    background-image: url("../../image/icon/submit_ricerca_articolo_u89.png");
+    width: 44px;
+    padding: 10px 10px 10px 10px;
+    background-color: #FFF;
+}
+
+af|inputListOfValues::search-icon-style:hover {
+    height: 44px;
+    /*   content: url("../../image/submit_ricerca_articolo_u89.png"); 
+    background-image: url("../../image/icon/arrow-white-divider-left.png"); */
+
+    padding: 10px 10px 10px 10px;
+    width: 44px;
+    background-color: #FFF;
+}
+
+af|inputListOfValues::content {
+    height: 44px;
+    width: 150px;
+    background-color: #FFF;
+}
+
+af|inputListOfValues::search-icon-style:disabled, af|inputListOfValues::search-icon-style:disabled:hover, af|inputListOfValues::search-icon-style:disabled:active {
+    background-image: url("../../image/icon/submit_ricerca_articolo_u89.png");
+}
+
+af|inputListOfValues::search-icon-style:active {
+    background-image: url("../../image/icon/submit_ricerca_articolo_u89.png");
+}
+
+.x1bn:hover {
+    background-image: url(../../image/icon/submit_ricerca_articolo_u89.png)
+}
+
+
+
+af|table::undisclosed-icon-style {
+    background-image: url("../../image/icon/u238.png");
+    -tr-inhibit: url("../../image/icon/u238.png");
+}
+
+af|table::disclosed-icon-style {
+    background-image: url("../../icon/image/u238.png");
+    -tr-inhibit: url("../../image/icon/u238.png");
+}
+
+af|table::disclosed-icon-style:hover {
+    background-image: url("../../image/icon/u238.png");
+    -tr-inhibit: url("../../image/icon/u238.png");
+}
+
+af|inputComboboxListOfValues::dropdown-icon-style {
+    background-image: url("../../image/icon/plus-2-16.jpg"); 
+/* background-color: #d81724; */
+}
+.x187
+{
+    padding-right: 0px;
+padding:0px;
+height:44px;
+width:44px
+}
+
+.x187:hover 
+{
+    background-image: url("../../image/icon/plus-2-16.jpg") !important;
+
+    padding-right: 0px;
+padding:0px;
+height:44px;
+width:44px
+}
+
+.xtp, .xtq {
+    vertical-align: middle;
+    margin: 6px 3px 0px 2px;
+    /* padding: 15px; */
+    
+}
+
+.x25.p_AFSelected
+{ 
+    width:210px;
+}
+
+.x25:focus
+{
+    width:210px;
+}
+
+
+.x25
+{
+width:210px;
+}
+ 
+.xh9
+{
+   padding:0px 0px 0px 0px; 
+} 
+.xh9
+{
+   padding:0px 0px 0px 0px; 
+}
+
+.x17u
+{
+    padding-right:0px;
+} 
+
+
+@agent gecko and (max-version: 18) {
+  af|inputColor::content:-moz-placeholder,
+  af|inputComboboxListOfValues::content:-moz-placeholder,
+  af|inputDate::content:-moz-placeholder,
+  af|inputListOfValues::content:-moz-placeholder,
+  af|selectOneChoice::content:-moz-placeholder,
+  af|inputNumberSpinbox::content:-moz-placeholder,
+  af|inputText::content:-moz-placeholder {
+    color: #e2dede;
+  }
+}
+@agent gecko and (min-version: 19) {
+  af|inputColor::content::-moz-placeholder,
+  af|inputComboboxListOfValues::content::-moz-placeholder,
+  af|inputDate::content::-moz-placeholder,
+  af|inputListOfValues::content::-moz-placeholder,
+  af|selectOneChoice::content:-moz-placeholder,
+  af|inputNumberSpinbox::content::-moz-placeholder,
+  af|inputText::content::-moz-placeholder {
+    color: #e2dede;
+  }
+}
+@agent webkit {
+  af|inputColor::content::-webkit-input-placeholder,
+  af|inputComboboxListOfValues::content::-webkit-input-placeholder,
+  af|inputDate::content::-webkit-input-placeholder,
+  af|inputListOfValues::content::-webkit-input-placeholder,
+  af|selectOneChoice::content::-webkit-input-placeholder,
+  af|inputNumberSpinbox::content::-webkit-input-placeholder,
+  af|inputText::content::-webkit-input-placeholder {
+    color: #e2dede;
+  }
+}
+@agent ie {
+  af|inputColor::content:-ms-input-placeholder,
+  af|inputComboboxListOfValues::content:-ms-input-placeholder,
+  af|inputDate::content:-ms-input-placeholder,
+  af|inputListOfValues::content:-ms-input-placeholder,
+  af|selectOneChoice::content:-ms-input-placeholder,
+  af|inputNumberSpinbox::content:-ms-input-placeholder,
+  af|inputText::content:-ms-input-placeholder {
+    color: #e2dede;
+  }  
+}
+
+
+@agent gecko and (max-version: 18) {
+  af|inputColor.darkColor::content:-moz-placeholder,
+  af|inputComboboxListOfValues.darkColor::content:-moz-placeholder,
+  af|inputDate.darkColor::content:-moz-placeholder,
+  af|inputListOfValues.darkColor::content:-moz-placeholder,
+  af|selectOneChoice.darkColor::content:-moz-placeholder,
+  af|inputNumberSpinbox.darkColor::content:-moz-placeholder,
+  af|inputText.darkColor::content:-moz-placeholder {
+    color: #717171;
+  }
+}
+@agent gecko and (min-version: 19) {
+  af|inputColor.darkColor::content::-moz-placeholder,
+  af|inputComboboxListOfValues.darkColor::content::-moz-placeholder,
+  af|inputDate.darkColor::content::-moz-placeholder,
+  af|inputListOfValues.darkColor::content::-moz-placeholder,
+  af|selectOneChoice.darkColor::content:-moz-placeholder,
+  af|inputNumberSpinbox.darkColor::content::-moz-placeholder,
+  af|inputText.darkColor::content::-moz-placeholder {
+    color: #717171;
+  }
+}
+@agent webkit {
+  af|inputColor.darkColor::content::-webkit-input-placeholder,
+  af|inputComboboxListOfValues.darkColor::content::-webkit-input-placeholder,
+  af|inputDate.darkColor::content::-webkit-input-placeholder,
+  af|inputListOfValues.darkColor::content::-webkit-input-placeholder,
+  af|selectOneChoice.darkColor::content::-webkit-input-placeholder,
+  af|inputNumberSpinbox.darkColor::content::-webkit-input-placeholder,
+  af|inputText.darkColor::content::-webkit-input-placeholder {
+    color: #717171;
+  }
+}
+@agent ie {
+  af|inputColor.darkColor::content:-ms-input-placeholder,
+  af|inputComboboxListOfValues.darkColor::content:-ms-input-placeholder,
+  af|inputDate.darkColor::content:-ms-input-placeholder,
+  af|inputListOfValues.darkColor::content:-ms-input-placeholder,
+  af|selectOneChoice.darkColor::content:-ms-input-placeholder,
+  af|inputNumberSpinbox.darkColor::content:-ms-input-placeholder,
+  af|inputText.darkColor::content:-ms-input-placeholder {
+    color: #717171;
+  }  
+}
+
+af|inputDate::launch-icon-style,
+af|inputDate::launch-icon-style:focus,
+af|inputDate::launch-icon-style:active,
+af|inputDate::launch-icon-style:hover:active {
+    background-image: url("../../image/icon/u142.png");
+    
+    height: 24px; 
+    width: 24px;  
+    left: -33px; 
+    content: url("../../image/icon/u142.png"); 
+}
+
+@agent (touchScreen:none) {
+    af|inputDate::launch-icon-style:hover {
+        background-image: url("../../image/icon/u142.png"); 
+        content: url("../../image/icon/u142.png"); 
+    }
+}
+
+af|selectManyChoice:active::dropdown-icon-style,
+af|selectManyChoice:depressed::dropdown-icon-style,
+af|inputComboboxListOfValues::dropdown-icon-style:active,
+af|inputComboboxListOfValues::dropdown-icon-style:depressed{
+  background-image: url("../../image/icon/plus-2-16.jpg"); 
+  background-color:-tr-property-ref(".AFButtonBackgroundActive:alias","background-color");
+  }
+af|selectManyChoice:disabled::dropdown-icon-style,
+af|selectManyChoice:disabled::dropdown-icon-style:active,
+af|selectManyChoice::dropdown-icon-style:disabled,
+af|selectManyChoice::dropdown-icon-style:disabled:active,
+af|inputComboboxListOfValues::dropdown-icon-style:disabled,
+af|inputComboboxListOfValues::dropdown-icon-style:disabled:active{
+  background-image: url("../../image/icon/plus-2-16.jpg");
+  background-color:  -tr-property-ref(".AFButtonBackgroundDisabled:alias","background-color");
+}
+
+af|selectManyChoice::dropdown-icon-style {
+    background-image: url("../../image/icon/plus-2-16.jpg"); 
+}	
+	
+af|button.table::dropdown-icon-style {
+    background-image: url("../../image/icon/arrow_grey_down.png"); 
+      margin: 5px 5px 0px 0px; 
+
+}
+
+
+af|button.table:hover::dropdown-icon-style {
+    background-image: url("../../image/icon/arrow_grey_down.png") !important; 
+margin: 5px 5px 0px 0px; 
+}
+
+
+
+.xg4{
+background-image: url("../../image/icon/arrow_grey_down.png") !important;
+}
+
+
+af|button.table::text {
+    margin-top: 10px;
+    color:#717171;
+}
+
+
+
+af|button.table:hover::text {
+    color:#717171;
+}
+
+af|inputListOfValues.customer::search-icon-style:disabled, af|inputListOfValues.customer::search-icon-style:disabled:hover, af|inputListOfValues.customer::search-icon-style:disabled:active {
+    background-image: url("../../image/icon/plus-2-16.jpg");
+}
+
+af|inputListOfValues.customer::search-icon-style:active {
+    background-image: url("../../image/icon/plus-2-16.jpg");
+}
+
+af|inputListOfValues.customer::search-icon-style {
+    height: 44px;
+  background-image: url("../../image/icon/plus-2-16.jpg");
+    width: 44px;
+    background-color: #FFF;
+    margin-top:5px;
+}
+af|inputListOfValues.customer::content{
+    height: 44px;
+    width: 165px;
+    background-color: #FFF;
+     font-size: 18px;
+    color: #717171;
+   font-family: "ArialNarrow" !important; 
+}
+
+af|inputListOfValues.customer::label {
+    padding: 0px 0px 0px 0px; 
+}

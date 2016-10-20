@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="retrurnSearchTF">
+    <default-activity>init</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__4">
+      <name>param_country</name>
+      <value>#{pageFlowScope.param_country}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <managed-bean id="__1">
+      <managed-bean-name>SearchResultsMB</managed-bean-name>
+      <managed-bean-class>xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.views.beans.SearchResultsMB</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="returnSearch">
+      <page>/xxsg/oracle/apps/ont/stargatev2/osaportal/returnsearch/views/fragments/returnSearch.jsff</page>
+    </view>
+    <method-call id="init">
+      <method>#{bindings.init.execute}</method>
+      <outcome>
+        <fixed-outcome>init</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-call id="CustomerDetailTF">
+      <task-flow-reference>
+        <document>/WEB-INF/xxsg/oracle/apps/ont/stargatev2/osaportal/osacustomerdetail/view/taskflows/OSACustomerDetailTF.xml</document>
+        <id>CustomerDetailTF</id>
+      </task-flow-reference>
+      <input-parameter id="__7">
+        <name>param_account_number</name>
+        <value></value>
+      </input-parameter>
+      <input-parameter-map>#{pageFlowScope.SearchResultsMB.returnSearchParamMap}</input-parameter-map>
+    </task-flow-call>
+    <control-flow-rule id="__2">
+      <from-activity-id>init</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>init</from-outcome>
+        <to-activity-id>returnSearch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>returnSearch</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>callCust</from-outcome>
+        <to-activity-id>CustomerDetailTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>
