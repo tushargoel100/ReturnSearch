@@ -1,7 +1,6 @@
 #*.class
 
 # data files
-.data*
 ViewController/classes*
 Model/classes*
  
