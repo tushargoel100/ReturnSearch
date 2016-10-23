@@ -5,7 +5,16 @@
   <af:panelGroupLayout id="pgl1" layout="vertical" styleClass="return-search">
     <af:panelGroupLayout id="pgl10" layout="vertical" styleClass="search-form">
       <af:panelGroupLayout id="pgl2" layout="vertical" inlineStyle="height:46px;" styleClass="AFStretchWidth">
-        <af:outputFormatted value="#{bundle['XXSG_OSA_RETURN_SEARCH']}" id="of1" styleClass="HeadingPage1"/>
+        <af:panelGroupLayout id="pgl27" styleClass="HeadingPage1" valign="middle" inlineStyle="display:block;"
+                             layout="horizontal">
+          <af:panelGroupLayout id="pgl37">
+            <af:image source="#{resource['xxsg:oracle/apps/ont/stargatev2/icons/order_search_icon.png']}" id="i2"
+                      inlineStyle="width:30px; margin-right: 10px;"/>
+          </af:panelGroupLayout>
+          <af:panelGroupLayout id="pgl36">
+            <af:outputFormatted value="#{bundle['XXSG_OSA_RETURN_SEARCH']}" id="of1"/>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
       </af:panelGroupLayout>
       <af:panelGroupLayout id="pgl3" layout="vertical" styleClass="AFStretchWidth">
         <af:masonryLayout id="ml1">
@@ -44,6 +53,38 @@
                 </af:inputListOfValues>
             </af:panelGroupLayout>      
             <af:spacer width="20" height="10" id="s2"/>
+            <af:panelGroupLayout id="pgl126" layout="vertical">
+              <af:outputText value="#{bundle['XXSG_OSA_RETURN_SEARCH_FROM']} " id="ot12" styleClass="HeadingPage2"/>
+              <af:inputDate id="it19" styleClass="input-date" inlineStyle="width:95px;" autoSubmit="true"
+                            value="#{bindings.Fromdate.inputValue}" placeholder="mm-dd-yyyy">
+                <af:convertDateTime pattern="MM-dd-yyyy"/>
+                <af:validateDateTimeRange maximum="#{bindings.Todate.inputValue}"/>
+              </af:inputDate>
+            </af:panelGroupLayout>
+            <af:spacer width="9" height="10" id="s6"/>
+            <af:panelGroupLayout id="pgl129" layout="vertical">
+              <af:outputText value="#{bundle['XXSG_OSA_DATE_TO']} " id="ot13" styleClass="HeadingPage2"/>
+              <af:inputDate id="id11" styleClass="input-date" inlineStyle="width:95px;" autoSubmit="true"
+                            value="#{bindings.Todate.inputValue}" placeholder="mm-dd-yyyy">
+                <af:convertDateTime pattern="MM-dd-yyyy"/>
+                <af:validateDateTimeRange minimum="#{bindings.Fromdate.inputValue}"/>
+              </af:inputDate>
+            </af:panelGroupLayout>
+          </af:panelGroupLayout>
+        </af:masonryLayout>
+        <af:masonryLayout id="ml2">
+          <af:panelGroupLayout id="pgl39" layout="horizontal" styleClass="AFMasonryTileSize2x1"
+                               inlineStyle="height:inherit;" valign="top" halign="left">
+            <af:panelGroupLayout id="pgl40" layout="vertical">
+              <af:outputText value="#{bundle['XXSG_OSA_STATUS_ONLY']} " id="ot31" styleClass="HeadingPage2"/>
+              <af:selectOneChoice id="soc5" styleClass="input-box"
+                                  unselectedLabel="#{bundle['XXSG_OSA_SELECT_ORDER_STATUS']} "
+                                  value="#{bindings.Status.inputValue}" autoSubmit="true">
+                <f:selectItems value="#{bindings.Status.items}" id="si5"/>
+                <f:validator binding="#{bindings.Status.validator}"/>
+              </af:selectOneChoice>
+            </af:panelGroupLayout>
+            <af:spacer width="20" height="10" id="s3"/>
             <af:panelGroupLayout id="pgl9" layout="vertical">
               <af:outputText value="#{bundle['XXSG_OSA_WEB_USER_ID']} " id="ot3" styleClass="HeadingPage2"/>
               <af:inputListOfValues id="webuseridId" popupTitle="Search and Select: #{bindings.Webuserid.hints.label}"
@@ -57,52 +98,9 @@
               </af:inputListOfValues>
             </af:panelGroupLayout>
           </af:panelGroupLayout>
-        </af:masonryLayout>
-        <af:masonryLayout id="ml2">
-          <af:panelGroupLayout id="pgl39" layout="horizontal" styleClass="AFMasonryTileSize2x1"
-                               inlineStyle="height:inherit;" valign="top" halign="left"
-                               rendered="#{!pageFlowScope.SearchResultsMB.advanceEnable}">
-            <af:panelGroupLayout id="pgl40" layout="vertical">
-              <af:outputText value="#{bundle['XXSG_OSA_STATUS_ONLY']} " id="ot31" styleClass="HeadingPage2"/>
-              <af:selectOneChoice id="soc5" styleClass="input-box"
-                                  unselectedLabel="#{bundle['XXSG_OSA_SELECT_ORDER_STATUS']} "
-                                  value="#{bindings.Status.inputValue}" autoSubmit="true">
-                <f:selectItems value="#{bindings.Status.items}" id="si5"/>
-                <f:validator binding="#{bindings.Status.validator}"/>
-              </af:selectOneChoice>
-            </af:panelGroupLayout>
-            <af:spacer width="20" height="10" id="s3"/>
-            <af:panelGroupLayout id="pgl126" layout="vertical">
-              <af:outputText value="#{bundle['XXSG_OSA_RETURN_SEARCH_FROM']} " id="ot12" styleClass="HeadingPage2"/>
-              <af:inputDate id="it19" styleClass="input-date" inlineStyle="width:95px;" autoSubmit="true"
-                            value="#{bindings.Fromdate.inputValue}">
-                <af:convertDateTime pattern="MM-dd-yyyy"/>
-                <af:validateDateTimeRange maximum="#{bindings.Todate.inputValue}"/>
-              </af:inputDate>
-            </af:panelGroupLayout>
-            <af:spacer width="10" height="10" id="s6"/>
-            <af:panelGroupLayout id="pgl129" layout="vertical">
-              <af:outputText value="#{bundle['XXSG_OSA_DATE_TO']} " id="ot13" styleClass="HeadingPage2"/>
-              <af:inputDate id="id11" styleClass="input-date" inlineStyle="width:95px;" autoSubmit="true"
-                            value="#{bindings.Todate.inputValue}">
-                <af:convertDateTime pattern="MM-dd-yyyy"/>
-                <af:validateDateTimeRange minimum="#{bindings.Fromdate.inputValue}"/>
-              </af:inputDate>
-            </af:panelGroupLayout>
-          </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl11" layout="horizontal" styleClass="AFMasonryTileSize2x1"
                                inlineStyle="height:inherit;" valign="top" halign="left"
                                rendered="#{pageFlowScope.SearchResultsMB.advanceEnable}">
-            <af:panelGroupLayout id="pgl17" layout="vertical">
-              <af:outputText value="#{bundle['XXSG_OSA_STATUS_ONLY']} " id="ot5" styleClass="HeadingPage2"/>
-              <af:selectOneChoice id="soc1" styleClass="input-box"
-                                  unselectedLabel="#{bundle['XXSG_OSA_SELECT_ORDER_STATUS']} "
-                                  value="#{bindings.Status.inputValue}" autoSubmit="true">
-                <f:selectItems value="#{bindings.Status.items}" id="si1"/>
-                <f:validator binding="#{bindings.Status.validator}"/>
-              </af:selectOneChoice>
-            </af:panelGroupLayout>
-            <af:spacer width="20" height="10" id="s7"/>
             <af:panelGroupLayout id="pgl18" layout="vertical">
               <af:outputText value="#{bundle['XXSG_OSA_RETURN_TYPE']} " id="ot6" styleClass="HeadingPage2"/>
               <af:selectOneChoice value="#{bindings.Returntype.inputValue}"
@@ -112,10 +110,7 @@
                 <f:validator binding="#{bindings.Returntype.validator}"/>
               </af:selectOneChoice>
             </af:panelGroupLayout>
-          </af:panelGroupLayout>
-          <af:panelGroupLayout id="pgl12" layout="horizontal" styleClass="AFMasonryTileSize2x1"
-                               inlineStyle="height:inherit;" valign="top" halign="right"
-                               rendered="#{pageFlowScope.SearchResultsMB.advanceEnable}">
+            <af:spacer width="20" height="10" id="s7"/>
             <af:panelGroupLayout id="pgl19" layout="vertical">
               <af:outputText value="#{bundle['XXSG_OSA_REASON_RETURN']} " id="ot15" styleClass="HeadingPage2"/>
               <af:selectOneChoice id="soc4" styleClass="input-box" unselectedLabel="#{bundle['XXSG_OSA_SELECT']} "
@@ -124,22 +119,21 @@
                 <f:validator binding="#{bindings.Returnreason.validator}"/>
               </af:selectOneChoice>
             </af:panelGroupLayout>
-            <af:spacer width="20" height="10" id="s10"/>
-            <af:panelGroupLayout id="pgl20" layout="vertical">
-              <af:outputText value="#{bundle['XXSG_OSA_PAYMENT_METHOD']} " id="ot16" styleClass="HeadingPage2"/>
-              <af:selectOneChoice value="#{bindings.Paymentmethod.inputValue}"
-                                  required="#{bindings.Paymentmethod.hints.mandatory}" id="soc6"
-                                  styleClass="input-box" autoSubmit="true"
-                                  unselectedLabel="#{bundle['XXSG_OSA_SELECT_PAY_METHOD']} ">
-                <f:selectItems value="#{bindings.Paymentmethod.items}" id="si6"/>
-                <f:validator binding="#{bindings.Paymentmethod.validator}"/>
-              </af:selectOneChoice>
-            </af:panelGroupLayout>
           </af:panelGroupLayout>
         </af:masonryLayout>
         <af:masonryLayout id="ml3" rendered="#{pageFlowScope.SearchResultsMB.advanceEnable}">
           <af:panelGroupLayout id="pgl13" layout="horizontal" styleClass="AFMasonryTileSize2x1"
                                inlineStyle="height:inherit;" valign="top" halign="left">
+            <af:panelGroupLayout id="pgl20" layout="vertical">
+              <af:outputText value="#{bundle['XXSG_OSA_PAYMENT_METHOD']} " id="ot16" styleClass="HeadingPage2"/>
+              <af:selectOneChoice value="#{bindings.Paymentmethod.inputValue}"
+                                  required="#{bindings.Paymentmethod.hints.mandatory}" id="soc6" styleClass="input-box"
+                                  autoSubmit="true" unselectedLabel="#{bundle['XXSG_OSA_SELECT_PAY_METHOD']} ">
+                <f:selectItems value="#{bindings.Paymentmethod.items}" id="si6"/>
+                <f:validator binding="#{bindings.Paymentmethod.validator}"/>
+              </af:selectOneChoice>
+            </af:panelGroupLayout>
+            <af:spacer width="20" height="10" id="s10"/>
             <af:panelGroupLayout id="pgl21" layout="vertical">
               <af:outputText value="#{bundle['XXSG_OSA_REIMBURSMENT_METHOD']} " id="ot7" styleClass="HeadingPage2"/>
               <af:selectOneChoice
@@ -150,7 +144,9 @@
                 <f:validator binding="#{bindings.Reimbursmentmethod.validator}"/>
               </af:selectOneChoice>
             </af:panelGroupLayout>
-            <af:spacer width="20" height="10" id="s8"/>
+          </af:panelGroupLayout>
+          <af:panelGroupLayout id="pgl14" layout="horizontal" styleClass="AFMasonryTileSize2x1"
+                               inlineStyle="height:inherit;" valign="top" halign="right">
             <af:panelGroupLayout id="pgl22" layout="vertical">
               <af:outputText value="#{bundle['XXSG_OSA_ITEM_NUMBER']} " id="ot8" styleClass="HeadingPage2"/>
               <af:inputText id="it5" value="#{bindings.Articlecode.inputValue}" styleClass="input-box"
@@ -158,9 +154,7 @@
                 <f:validator binding="#{bindings.Articlecode.validator}"/>
               </af:inputText>
             </af:panelGroupLayout>
-          </af:panelGroupLayout>
-          <af:panelGroupLayout id="pgl14" layout="horizontal" styleClass="AFMasonryTileSize2x1"
-                               inlineStyle="height:inherit;" valign="top" halign="right">
+            <af:spacer width="20" height="10" id="s8"/>
             <af:panelGroupLayout id="pgl23" layout="vertical">
               <af:outputText value="#{bundle['XXSG_OSA_CUTOMER_DELIVERY_EMAIL']} " id="ot9" styleClass="HeadingPage2"/>
               <af:inputText id="it6" value="#{bindings.Email.inputValue}" styleClass="input-box"
@@ -171,7 +165,11 @@
                 <f:validator binding="#{bindings.Email.validator}"/>
               </af:inputText>
             </af:panelGroupLayout>
-            <af:spacer width="20" height="10" id="s9"/>
+          </af:panelGroupLayout>
+        </af:masonryLayout>
+        <af:masonryLayout id="ml4" rendered="#{pageFlowScope.SearchResultsMB.advanceEnable}">
+          <af:panelGroupLayout id="pgl15" layout="horizontal" styleClass="AFMasonryTileSize2x1"
+                               inlineStyle="height:inherit;" valign="top" halign="left">
             <af:panelGroupLayout id="pgl24" layout="vertical">
               <af:outputText value="#{bundle['XXSG_OSA_LOYALTY_CARD']} " id="ot10" styleClass="HeadingPage2"/>
               <af:inputText id="it7" value="#{bindings.Loyaltycard.inputValue}" styleClass="input-box"
@@ -179,35 +177,13 @@
                 <f:validator binding="#{bindings.Loyaltycard.validator}"/>
               </af:inputText>
             </af:panelGroupLayout>
-          </af:panelGroupLayout>
-        </af:masonryLayout>
-        <af:masonryLayout id="ml4" rendered="#{pageFlowScope.SearchResultsMB.advanceEnable}">
-          <af:panelGroupLayout id="pgl15" layout="horizontal" styleClass="AFMasonryTileSize2x1"
-                               inlineStyle="height:inherit;" valign="top" halign="left">
+            <af:spacer width="20" height="10" id="s14"/>
             <af:panelGroupLayout id="pgl25" layout="vertical">
               <af:outputText value="#{bundle['XXSG_OSA_RS']} " id="ot11" styleClass="HeadingPage2"/>
               <af:inputText id="it8" value="#{bindings.Rs.inputValue}" styleClass="input-box" autoSubmit="true"
                             placeholder="Rs:Placeholder">
                 <f:validator binding="#{bindings.Rs.validator}"/>
               </af:inputText>
-            </af:panelGroupLayout>
-            <af:spacer width="20" height="10" id="s14"/>
-            <af:panelGroupLayout id="pgl261" layout="vertical">
-              <af:outputText value="#{bundle['XXSG_OSA_RETURN_SEARCH_FROM']} " id="ot121" styleClass="HeadingPage2"/>
-              <af:inputDate id="it9" styleClass="input-date" inlineStyle="width:95px;" autoSubmit="true"
-                            value="#{bindings.Fromdate.inputValue}">
-                <af:convertDateTime pattern="MM-dd-yyyy"/>
-                <af:validateDateTimeRange maximum="#{bindings.Todate.inputValue}"/>
-              </af:inputDate>
-            </af:panelGroupLayout>
-            <af:spacer width="10" height="10" id="s61"/>
-            <af:panelGroupLayout id="pgl29" layout="vertical">
-              <af:outputText value="#{bundle['XXSG_OSA_DATE_TO']} " id="ot131" styleClass="HeadingPage2"/>
-              <af:inputDate id="id1" styleClass="input-date" inlineStyle="width:95px;" autoSubmit="true"
-                            value="#{bindings.Todate.inputValue}">
-                <af:convertDateTime pattern="MM-dd-yyyy"/>
-                <af:validateDateTimeRange minimum="#{bindings.Fromdate.inputValue}"/>
-              </af:inputDate>
             </af:panelGroupLayout>
           </af:panelGroupLayout>
         </af:masonryLayout>
@@ -217,16 +193,16 @@
           <af:link id="l1"
                    icon="#{pageFlowScope.SearchResultsMB.advanceEnable ? resource['xxsg:oracle/apps/ont/stargatev2/icons/u158.png'] : resource['xxsg:oracle/apps/ont/stargatev2/icons/u157.png']}" styleClass="advance-button"
                    actionListener="#{pageFlowScope.SearchResultsMB.toggleAdvanceEnable}"/>
-          <af:spacer width="10" height="10" id="s13"/>
+          <af:spacer width="8" height="10" id="s13"/>
           <af:outputText value="#{bundle['XXSG_OSA_ADVANCE_SEARCH']} " id="ot17" styleClass="avanzata_label"/>
         </af:panelGroupLayout>
         <af:panelGroupLayout id="pgl31" inlineStyle="float:right;">
           <af:link text="#{bundle['XXSG_OSA_CLEAR_ALL']} " id="l2"
-                   inlineStyle="color: #484848;"
+                   inlineStyle="color: #707070; text-transform: uppercase; line-height: 43px;"
                    actionListener="#{pageFlowScope.SearchResultsMB.clear}"/>
           <af:spacer width="40" height="10" id="s11"/>
           <af:link text="#{bundle['XXSG_OSA_SEARCH']} " id="l3"
-                   inlineStyle="background-color: #d81724; font-size: 18px; color: #FFFFFF; padding: 13px 29px;"
+                   inlineStyle="background-color: #d81724; font-size: 14px; color: #FFFFFF; line-height: 43px; display: inline-block; height: 45px; width: 100px; text-align: center;"
                    actionListener="#{pageFlowScope.SearchResultsMB.search}"/>
         </af:panelGroupLayout>
       </af:panelGroupLayout>
@@ -235,41 +211,43 @@
     <af:panelGroupLayout id="pgl32" layout="vertical">
       <af:panelGroupLayout id="pgl33" partialTriggers="l3 l2">
         <af:outputFormatted value="#{bundle['XXSG_OSA_RETURN_FOUND']} " id="ot18"
-                            inlineStyle="font-size: 24px; color: #717171; padding-left: 17px; font-style: italic; display: inline-block; padding-bottom: 20px;"/>
+                            inlineStyle='font-size: 22px; color: #949495; padding-left: 17px; display: inline-block; padding-bottom: 20px; font-family: "ArialNarrow";'/>
         <af:outputFormatted value="#{bindings.HeaderResultsVO1Iterator.estimatedRowCount}" id="of2"
-                            inlineStyle="font-size: 24px; color: #d21239; padding-left: 17px; font-style: italic; display: inline-block; padding-bottom: 20px;"/>
+                            inlineStyle='font-size: 22px; color: #d71321; padding-left: 17px; display: inline-block; padding-bottom: 20px; font-family: "ArialNarrow"; '/>
       </af:panelGroupLayout>
-      <af:panelGroupLayout id="pgl34" layout="horizontal" partialTriggers="l3 l2">
-        <af:iterator id="i11" value="#{pageFlowScope.SearchResultsMB.searchParams}" var="item">
-            <af:panelGroupLayout id="pgl35" layout="horizontal" styleClass="search-filter-value">
-              <af:outputFormatted id="of14"
-                                  value="#{item.paramLabel} : #{item.paramValue}"
-                                  inlineStyle="display: inline-block; padding-bottom: 23px; padding-left: 20px;"/>
-              <af:link id="l4"
-                       actionListener="#{pageFlowScope.SearchResultsMB.hideFilter}"
-                       icon="#{resource['xxsg:oracle/apps/ont/stargatev2/icons/cross-icon.png']}" styleClass="filter-cross">
-                    <f:attribute name="field" value="#{item.paramName}"/>
-                    <f:attribute name="item" value="#{item}"/>                
-              </af:link>
-              <af:spacer width="20" height="10" id="s15"/>
-            </af:panelGroupLayout>
-          </af:iterator>
+      <af:panelGroupLayout id="pgl16" layout="horizontal" styleClass="AFStretchWidth">
+        <af:masonryLayout id="ml5">
+          <af:panelGroupLayout id="pgl34" layout="horizontal" partialTriggers="l3 l2" halign="default" valign="bottom"
+                               inlineStyle="display: inline-block;">
+            <af:iterator id="i11" value="#{pageFlowScope.SearchResultsMB.searchParams}" var="item">
+              <af:panelGroupLayout id="pgl35" layout="horizontal" styleClass="search-filter-value">
+                <af:outputFormatted id="of14" value="#{item.paramLabel} : #{item.paramValue}"
+                                    inlineStyle='display: inline-block; padding-left: 20px; font-size: 15px; color: #323232; font-family: "ArialNarrow"; '/>
+                <af:link id="l4" actionListener="#{pageFlowScope.SearchResultsMB.hideFilter}"
+                         icon="#{resource['xxsg:oracle/apps/ont/stargatev2/icons/cross-icon.png']}"
+                         styleClass="filter-cross">
+                  <f:attribute name="field" value="#{item.paramName}"/>
+                  <f:attribute name="item" value="#{item}"/>
+                </af:link>
+                <af:spacer width="20" height="10" id="s15"/>
+              </af:panelGroupLayout>
+            </af:iterator>
+          </af:panelGroupLayout>
+          <af:panelGroupLayout id="pgl26" layout="horizontal" halign="right"
+                               inlineStyle="margin-right: 31px; margin-bottom: 3px; display: inline-block; float: right; margin-top: -5px;" valign="top">
+            <af:link text="#{bundle['XXSG_OSA_CANCEL_RETURN']}" id="l6" styleClass="table-action-button"/>
+            <af:spacer width="3" height="10" id="s4"/>
+            <af:link text="#{bundle['XXSG_OSA_AUTHORIZE']}" id="l5" styleClass="table-action-button"/>
+          </af:panelGroupLayout>
+        </af:masonryLayout>
       </af:panelGroupLayout>
-      <af:panelGroupLayout id="pgl26" layout="horizontal">
-        <af:link text="#{bundle['XXSG_OSA_CANCEL_RETURN']}" id="l6"
-                 inlineStyle="background-color: #323232; font-size: 18px; color: #FFFFFF; padding: 13px 29px;"/>
-        <af:spacer width="2" height="10" id="s4"/>
-        <af:link text="#{bundle['XXSG_OSA_AUTHORIZE']}" id="l5"
-                 inlineStyle="background-color: #323232; font-size: 18px; color: #FFFFFF; padding: 13px 29px;"/>
-      </af:panelGroupLayout>
-      <af:spacer width="10" height="10" id="s5"/>
       <af:panelCollection id="pc1" styleClass="AFStretchWidth search-table" partialTriggers="l3 l2">
         <f:facet name="menus"/>
         <f:facet name="toolbar"/>
         <af:table value="#{bindings.HeaderResultsVO1.collectionModel}" var="row"
                   rows="#{bindings.HeaderResultsVO1.rangeSize}"
                   emptyText="#{bindings.HeaderResultsVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                  rowBandingInterval="0" selectedRowKeys="#{bindings.HeaderResultsVO1.collectionModel.selectedRow}"
+                  rowBandingInterval="1" selectedRowKeys="#{bindings.HeaderResultsVO1.collectionModel.selectedRow}"
                   rowSelection="single" fetchSize="#{bindings.HeaderResultsVO1.rangeSize}" id="t3"
                   columnStretching="multiple" styleClass="AFStretchWidth"
                   selectionListener="#{bindings.HeaderResultsVO1.treeModel.makeCurrent}" scrollPolicy="page">
@@ -375,7 +353,7 @@
         <f:facet name="statusbar"/>
         <f:facet name="secondaryToolbar">
           <af:toolbar id="t2">
-            <af:link id="b2" icon="#{resource['xxsg:oracle/apps/ont/stargatev2/icons/u208.png']}">
+            <af:link id="b2" icon="#{resource['xxsg:oracle/apps/ont/stargatev2/icons/download_btn.png']}">
               <af:exportCollectionActionListener type="excelHTML" exportedId="t3" filename="export.xls"/>
             </af:link>
           </af:toolbar>

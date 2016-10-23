@@ -1,6 +1,8 @@
 #*.class
 
 # data files
+.data/*
+.adf/*
 ViewController/classes*
 Model/classes*
  
