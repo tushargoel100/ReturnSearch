@@ -1,9 +1,23 @@
+/* OsaSkin.css
+
+REVISIONS:
+
+   Ver        	Date        	Author           Description
+   ---------  	----------  	---------------  ------------------------------------
+   1.0        	15/06/2016      TusharG       	 1. Initial OsaSkin.css Created
+   1.1			24/10/2016		ToshahnvieM 	 2. Common components identified
+   1.2			25/10/2016		ToshahnvieM 	 3. Customer Search components identified
+   1.3			25/10/2016		ToshahnvieM 	 4. Customer Detail components identified
+   1.4			25/10/2016		Vinay			 5. RMA search and Item Search components identified
+*/
+
 @charset "UTF-8";
 
 /**ADFFaces_Skin_File / DO NOT REMOVE**/
 @namespace af "http://xmlns.oracle.com/adf/faces/rich";
 @namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
-
+/* 1.1 */
+/* common components start*/
 af|panelSplitter {
     -tr-divider-size: 37;
     marquee-direction: reverse;
@@ -68,7 +82,7 @@ af|inputText::content:hover, af|inputText::content:selected, af|inputText::conte
     height: 45px;
     width: 200px;
     font-family: "ArialNarrow";
-    font-size: 18px;
+    font-size: 16px;
     color: #717171;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
@@ -79,7 +93,7 @@ af|inputText::content {
     height: 45px;
     width: 200px;
     font-family: "ArialNarrow";
-    font-size: 18px;
+    font-size: 16px;
     color: #717171;
     background-color: #FFFFFF;
 }
@@ -124,30 +138,22 @@ af|inputDate::content {
     font-size: 16px;
     color: #323232;
     background-color: #FFFFFF;
-    padding-left: 6px;
 }
 
 af|table af|column::column-header-cell {
-    background-color: #404040;
-    font-size: 16px;
+    background-color: #1a1a1a;
+    font-size: 14px;
     color: #FFFFFF;
-    font-family: '' Arial narrow '';
+    font-family: "ArialNarrow";
     font-weight: normal;
     border-right: #FFFFFF 1px solid;
-    text-align:center;
-}
-
-af|column::column-header-cell {
-    background-color: #323232;
-    color: #ffffff;
-    font-family: 'Arial narrow';
-    font-size: 15px;
-    border: none;
-    height: 30px;
+	height: 45px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 af|panelAccordion::header {
-    background: #000000;
+     background-color: #1A1A1A;
     min-height: 45px;
     padding: 0px 0px 0px 0px;
 }
@@ -160,23 +166,9 @@ af|table::data-table-VH-lines af|column::data-cell {
     padding-right: 0px;
 }
 
-.colorfulAccordian1 af|panelAccordion::header-toolbar {
-    background-color: #000000;
-}
 
 af|inputDate::label {
     color: #717171;
-}
-/* input date*/
-af|column::column-header-cell {
-    background-color: #323232;
-    color: #ffffff;
-    font-family: "ArialNarrow";
-    font-weight: 100;
-    font-size: 15px;
-    border: none;
-    height: 46px;
-    text-align: left;
 }
 
 .xsz, .xsx {
@@ -189,7 +181,7 @@ af|column::column-header-cell {
 
 af|table::data-table-VH-lines af|column::data-cell {
     background-color: #F1F1F1;
-    height: 35px;
+    height: 30px;
     font-size: 11px;
     border: white 1px solid;
     padding-right: 0px;
@@ -197,7 +189,6 @@ af|table::data-table-VH-lines af|column::data-cell {
 
 af|table::data-row:selected:focused, af|table::data-row:selected:focused {
     font-size: 15px;
-    background-color: #F6F6F6 #FFFFFF;
     color: #323232;
     border-color: #F6F6F6;
 }
@@ -226,7 +217,7 @@ af|inputListOfValues::search-icon-style:hover {
 af|inputListOfValues::content {
     color: #323232;
     height: 45px;
-    width: 155px;
+    width: 155PX;
     background-color: #FFFFFF;
 }
 
@@ -238,9 +229,6 @@ af|inputListOfValues::search-icon-style:active {
     background-image: url("../../image/icon/filter_icon.png");
 }
 
-.x1bn:hover {
-    background-image: url(../../image/icon/filter_icon.png)
-}
 
 af|table::undisclosed-icon-style {
     background-image: url("../../image/icon/u238.png");
@@ -340,38 +328,13 @@ af|inputComboboxListOfValues::dropdown-icon-style {
 }
 
 
-/*modified on 12-10/2016*/
-@agent gecko and (max-version:18) {
-    af|inputColor.darkColor::content:-moz-placeholder, af|inputComboboxListOfValues.darkColor::content:-moz-placeholder, af|inputDate.darkColor::content:-moz-placeholder, af|inputListOfValues.darkColor::content:-moz-placeholder, af|selectOneChoice.darkColor::content:-moz-placeholder, af|inputNumberSpinbox.darkColor::content:-moz-placeholder, af|inputText.darkColor::content:-moz-placeholder {
-        color: #bcbabb;
-    }
-}
 
-
-@agent gecko and (min-version:19) {
-    af|inputColor.darkColor::content::-moz-placeholder, af|inputComboboxListOfValues.darkColor::content::-moz-placeholder, af|inputDate.darkColor::content::-moz-placeholder, af|inputListOfValues.darkColor::content::-moz-placeholder, af|selectOneChoice.darkColor::content:-moz-placeholder, af|inputNumberSpinbox.darkColor::content::-moz-placeholder, af|inputText.darkColor::content::-moz-placeholder {
-        color: #bcbabb;
-    }
-}
-
-
-@agent webkit {
-    af|inputColor.darkColor::content::-webkit-input-placeholder, af|inputComboboxListOfValues.darkColor::content::-webkit-input-placeholder, af|inputDate.darkColor::content::-webkit-input-placeholder, af|inputListOfValues.darkColor::content::-webkit-input-placeholder, af|selectOneChoice.darkColor::content::-webkit-input-placeholder, af|inputNumberSpinbox.darkColor::content::-webkit-input-placeholder, af|inputText.darkColor::content::-webkit-input-placeholder {
-        color: #bcbabb;
-    }
-}
-
-
-@agent ie {
-    af|inputColor.darkColor::content:-ms-input-placeholder, af|inputComboboxListOfValues.darkColor::content:-ms-input-placeholder, af|inputDate.darkColor::content:-ms-input-placeholder, af|inputListOfValues.darkColor::content:-ms-input-placeholder, af|selectOneChoice.darkColor::content:-ms-input-placeholder, af|inputNumberSpinbox.darkColor::content:-ms-input-placeholder, af|inputText.darkColor::content:-ms-input-placeholder {
-        color: #bcbabb;
-    }
     af|inputDate::content:hover, af|inputDate::content:selected, af|inputDate::content:focus {
         width: 152px;
         height: 45px;
         font-size: 16px;
-        color: #323232;
-        background-color: #FFFFFF;
+        color: #717171;
+        background-color: #F1F0F0;
     }
     af|inputDate::launch-icon-style {
         color: #e2dede;
@@ -381,13 +344,15 @@ af|inputComboboxListOfValues::dropdown-icon-style {
         height: 24px;
         width: 24px;
         left: -33px;
+        content: url("../../image/icon/u142.png");
     }
 @agent (touchScreen:none) {
     af|inputDate::launch-icon-style:hover {
         background-image: url("../../image/icon/u142.png"); 
+        content: url("../../image/icon/u142.png"); 
     }
  }
-}
+
 
 
 af|selectManyChoice:active::dropdown-icon-style, af|selectManyChoice:depressed::dropdown-icon-style, af|inputComboboxListOfValues::dropdown-icon-style:active, af|inputComboboxListOfValues::dropdown-icon-style:depressed {
@@ -408,39 +373,83 @@ af|selectManyChoice::dropdown-icon-style {
     background-image: url("../../image/icon/plus-2-16.png");
 }
 
-af|button.table::dropdown-icon-style {
-    background-image: url("../../image/icon/arrow_grey_down.png");
-    margin: 5px 5px 0px 0px;
-}
-
-af|button.table:hover::dropdown-icon-style {
-    background-image: url("../../image/icon/arrow_grey_down.png")!important;
-    margin: 5px 5px 0px 0px;
-}
-
-.xg4 {
-    background-image: url("../../image/icon/arrow_grey_down.png")!important;
-}
-
-af|button.table::text {
-    margin-top: 10px;
-    color: #717171;
-}
-
-af|button.table:hover::text {
-    color: #717171;
-}
-
-af|inputListOfValues.customer::search-icon-style:disabled, af|inputListOfValues.customer::search-icon-style:disabled:hover, af|inputListOfValues.customer::search-icon-style:disabled:active {
-    background-image: url("../../image/icon/plus-2-16.png");
-}
-
 .x186 {
     height: 45px;
     width: 45px;
     background-color: rgb(216, 23, 36);
     padding: 0px;
 }
+
+af|panelAccordion::header-title {
+    color: #FFFFFF;
+    font-family: "Arial Narrow";
+     background-color: #1A1A1A;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+af|panelAccordion::header-disclose {
+     background-color: #1A1A1A;
+}
+
+af|panelAccordion::header-subsequent {
+     background-color: #1A1A1A;
+    min-height: 45px;
+    padding: 0px 0px 0px 0px;
+    background-image: none;
+}
+
+af|panelAccordion::header-toolbar {
+     background-color: #1A1A1A;
+}
+
+af|panelAccordion::undisclosed-icon-style
+{
+  margin-left:15px;
+margin-right:15px;
+    background-image: url("../../image/icon/arrow_expand_icon.png"); 
+    }
+af|panelAccordion::undisclosed-icon-style:hover
+{margin-left:15px;
+margin-right:15px;
+    background-image: url("../../image/icon/arrow_expand_hover_icon.png")!important; 
+}
+af|panelAccordion::disclosed-icon-style
+{margin-left:15px;
+margin-right:15px;;
+    background-image: url("../../image/icon/arrow_collapse_icon.png"); 
+    }
+af|panelAccordion::disclosed-icon-style:hover
+{    margin-left:15px;
+margin-right:15px;
+    background-image: url("../../image/icon/arrow_collapse_hover_icon.png")!important; 
+}
+.AFDisclosedIconStyleHover:alias {
+margin-left:15px;
+margin-right:15px;
+  background-image: url('../../image/icon/arrow_collapse_hover_icon.png');
+}
+.AFUndisclosedIconStyleHover:alias {
+margin-left:15px;
+margin-right:15px;
+  background-image:  url("../../image/icon/arrow_expand_hover_icon.png");
+}
+/* common components end*/
+
+/* 1.2 */
+/* 007 Customer Search start*/
+@agent ie {
+    af|inputListOfValues.customer::content:-ms-input-placeholder {
+        color: #e2dede;
+    }
+}
+
+
+af|inputListOfValues.customer::search-icon-style:disabled, af|inputListOfValues.customer::search-icon-style:disabled:hover, af|inputListOfValues.customer::search-icon-style:disabled:active {
+    background-image: url("../../image/icon/plus-2-16.png");
+}
+
+
 
 af|inputListOfValues.customer::search-icon-style:active {
     background-image: url("../../image/icon/plus-2-16.png");
@@ -467,66 +476,144 @@ af|inputListOfValues.customer::label {
     padding: 0px 0px 0px 0px;
 }
 
-af|panelAccordion::header-title {
-    color: #FFFFFF;
-    font-family: "Arial Narrow";
-    background-color: #1A1A1A;
-    font-weight: normal;
-    font-size: 18px;
+
+.x1bn:hover {
+    background-image: url(../../image/icon/filter_icon.png)
 }
 
-af|panelAccordion::header-disclose {
-    background-color: #000000;
+af|button.table::dropdown-icon-style {
+    background-image: url("../../image/icon/arrow_grey_down.png");
+    margin: 5px 5px 0px 0px;
 }
 
-af|panelAccordion::header-subsequent {
-    background: #000000;
-    min-height: 45px;
-    padding: 0px 0px 0px 0px;
-    background-image: none;
+af|button.table:hover::dropdown-icon-style {
+    background-image: url("../../image/icon/arrow_grey_down.png")!important;
+    margin: 5px 5px 0px 0px;
 }
 
-af|panelAccordion::header-toolbar {
-    background-color: #000000;
+.xg4 {
+    background-image: url("../../image/icon/arrow_grey_down.png")!important;
 }
 
-af|panelAccordion::undisclosed-icon-style {
-    margin-left: 15px;
-    margin-right: 15px;
-    background-image: url("../../image/icon/arrow_collapse_icon.png");
+af|button.table::text {
+    margin-top: 10px;
+    color: #717171;
 }
 
-af|panelAccordion::undisclosed-icon-style:hover {
-    margin-left: 15px;
-    margin-right: 15px;
-    background-image: url("../../image/icon/arrow_collapse_hover_icon.png")!important;
+af|button.table:hover::text {
+    color: #717171;
 }
 
-af|panelAccordion::disclosed-icon-style {
-    margin-left: 15px;
-    margin-right: 15px;;
-    background-image: url("../../image/icon/arrow_expand_icon.png");
+/* 007 Customer Search end */
+
+
+/* 1.3*/
+/* 008 Customer Detail start*/
+.custdetail af|inputText::content:hover, .custdetail af|inputText::content:selected,.custdetail af|inputText::content:focus {
+    height: 45px;
+    width: 180px;
+    font-family: "ArialNarrow";
+    font-size: 12px;
+    color: #323232;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color:  #FFFFFF;
+    
 }
 
-af|panelAccordion::disclosed-icon-style:hover {
-    margin-left: 15px;
-    margin-right: 15px;
-    background-image: url("../../image/icon/arrow_expand_hover_icon.png")!important;
+ .custdetail af|inputText::content {
+    height: 45px;
+    width: 180px;
+    font-family:"ArialNarrow";
+    font-size: 12px;
+    color: #323232;
+    background-color: #FFFFFF;
 }
 
-.AFDisclosedIconStyleHover:alias {
-    margin-left: 15px;
-    margin-right: 15px;
-    background-image: url('../../image/icon/arrow_expand_hover_icon.png');
+.custdetail1 af|inputText::content:hover, .custdetail1 af|inputText::content:selected,.custdetail1 af|inputText::content:focus {
+    height: 45px;
+    width: 465px;
+    font-family: "ArialNarrow";
+    font-size: 12px;
+    color: #323232;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color:  #FFFFFF;
+    
 }
 
-.AFUndisclosedIconStyleHover:alias {
-    margin-left: 15px;
-    margin-right: 15px;
-    background-image: url("../../image/icon/arrow_collapse_hover_icon.png");
+ .custdetail1 af|inputText::content {
+    height: 45px;
+    width: 465px;
+    font-family: "ArialNarrow";
+    font-size: 12px;
+    color: #323232;
+    background-color: #FFFFFF;
 }
-@agent ie {
-    af|inputListOfValues.customer::content:-ms-input-placeholder {
-        color: #e2dede;
+
+.custdetail af|inputComboboxListOfValues::content {
+    height: 25px; 
+}
+.custdetail af|inputComboboxListOfValues::dropdown-icon-style {
+    height: 25px; 
+}
+
+/* 008 Customer Detail end*/
+
+/*modified on 12-10/2016*/
+@agent gecko and (max-version:18) {
+    af|inputColor.darkColor::content:-moz-placeholder, af|inputComboboxListOfValues.darkColor::content:-moz-placeholder, af|inputDate.darkColor::content:-moz-placeholder, af|inputListOfValues.darkColor::content:-moz-placeholder, af|selectOneChoice.darkColor::content:-moz-placeholder, af|inputNumberSpinbox.darkColor::content:-moz-placeholder, af|inputText.darkColor::content:-moz-placeholder {
+        color: #bcbabb;
     }
 }
+
+
+@agent gecko and (min-version:19) {
+    af|inputColor.darkColor::content::-moz-placeholder, af|inputComboboxListOfValues.darkColor::content::-moz-placeholder, af|inputDate.darkColor::content::-moz-placeholder, af|inputListOfValues.darkColor::content::-moz-placeholder, af|selectOneChoice.darkColor::content:-moz-placeholder, af|inputNumberSpinbox.darkColor::content::-moz-placeholder, af|inputText.darkColor::content::-moz-placeholder {
+        color: #bcbabb;
+    }
+}
+
+
+@agent webkit {
+    af|inputColor.darkColor::content::-webkit-input-placeholder, af|inputComboboxListOfValues.darkColor::content::-webkit-input-placeholder, af|inputDate.darkColor::content::-webkit-input-placeholder, af|inputListOfValues.darkColor::content::-webkit-input-placeholder, af|selectOneChoice.darkColor::content::-webkit-input-placeholder, af|inputNumberSpinbox.darkColor::content::-webkit-input-placeholder, af|inputText.darkColor::content::-webkit-input-placeholder {
+        color: #bcbabb;
+    }
+}
+
+
+@agent ie {
+    af|inputColor.darkColor::content:-ms-input-placeholder, af|inputComboboxListOfValues.darkColor::content:-ms-input-placeholder, af|inputDate.darkColor::content:-ms-input-placeholder, af|inputListOfValues.darkColor::content:-ms-input-placeholder, af|selectOneChoice.darkColor::content:-ms-input-placeholder, af|inputNumberSpinbox.darkColor::content:-ms-input-placeholder, af|inputText.darkColor::content:-ms-input-placeholder {
+        color: #bcbabb;
+    }
+	}
+
+
+
+.colorfulAccordian1 af|panelAccordion::header-toolbar {
+    background-color: #000000;
+}
+
+
+
+
+af|table.popup-table af|column::column-header-cell 
+{  
+background-color: #1A1A1A;
+font-size: 15px;
+color: #FFFFFF;
+font-family: ''Arial narrow''; 
+ height: 20px;
+}
+
+af|button.actionButton {
+    width: 20px;
+    font-family: 'ArialNarrow'; 
+     font-size: 18px;
+    color: #FFFFFF;
+    background-color:#484848;
+}
+
+
+
+

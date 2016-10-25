@@ -198,8 +198,7 @@
         </af:panelGroupLayout>
         <af:panelGroupLayout id="pgl31" inlineStyle="float:right;">
           <af:link text="#{bundle['XXSG_OSA_CLEAR_ALL']} " id="l2"
-                   inlineStyle="color: #707070; text-transform: uppercase; line-height: 43px;"
-                   actionListener="#{pageFlowScope.SearchResultsMB.clear}"/>
+                   actionListener="#{pageFlowScope.SearchResultsMB.clear}" styleClass="clear-all"/>
           <af:spacer width="40" height="10" id="s11"/>
           <af:link text="#{bundle['XXSG_OSA_SEARCH']} " id="l3"
                    inlineStyle="background-color: #d81724; font-size: 14px; color: #FFFFFF; line-height: 43px; display: inline-block; height: 45px; width: 100px; text-align: center;"
