@@ -70,6 +70,7 @@
           <Item Value="Reimbursmentmethod"/>
           <Item Value="Reimbursmentdate"/>
           <Item Value="CustAccountId"/>
+          <Item Value="HeaderId"/>
         </AttrNames>
         <Accessors>
           <Item Value="Lines"/>

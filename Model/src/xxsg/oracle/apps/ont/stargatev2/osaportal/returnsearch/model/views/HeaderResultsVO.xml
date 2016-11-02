@@ -9,10 +9,12 @@
   BindingStyle="OracleName"
   CustomQuery="true"
   PageIterMode="Full"
-  ComponentClass="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.views.HeaderResultsVOImpl">
+  ComponentClass="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.views.HeaderResultsVOImpl"
+  RowClass="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.views.HeaderResultsVORowImpl">
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
-    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <Properties>
     <SchemaBasedProperties>
@@ -383,7 +385,14 @@ WHERE 1 = 1
     Precision="255"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    SQLType="VARCHAR"/>
+    SQLType="VARCHAR">
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="HeaderLinesResultsVC"
     ViewObjectName="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.views.HeaderResultsVO"

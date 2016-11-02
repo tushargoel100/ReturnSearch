@@ -15,6 +15,11 @@
       <managed-bean-class>xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.views.beans.SearchResultsMB</managed-bean-class>
       <managed-bean-scope>pageFlow</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__11">
+      <managed-bean-name>ItemOperations</managed-bean-name>
+      <managed-bean-class>xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.views.beans.ItemOperations</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
     <view id="returnSearch">
       <page>/xxsg/oracle/apps/ont/stargatev2/osaportal/returnsearch/views/fragments/returnSearch.jsff</page>
     </view>
@@ -35,6 +40,25 @@
       </input-parameter>
       <input-parameter-map>#{pageFlowScope.SearchResultsMB.returnSearchParamMap}</input-parameter-map>
     </task-flow-call>
+    <task-flow-call id="CommonApplicationTF">
+      <task-flow-reference>
+        <document>/WEB-INF/xxsg/oracle/apps/ont/stargatev2/osaportal/commonapplication/view/taskflows/CommonApplicationTF.xml</document>
+        <id>CommonApplicationTF</id>
+      </task-flow-reference>
+      <input-parameter id="__9">
+        <name>param_task_type</name>
+        <value>OrderCancellation</value>
+      </input-parameter>
+      <input-parameter id="__10">
+        <name>param_header_id</name>
+        <value>#{pageFlowScope.ItemOperations.param_header_id}</value>
+      </input-parameter>
+      <run-as-dialog>
+        <display-type>
+          <inline-popup/>
+        </display-type>
+      </run-as-dialog>
+    </task-flow-call>
     <control-flow-rule id="__2">
       <from-activity-id>init</from-activity-id>
       <control-flow-case id="__3">
@@ -47,6 +71,10 @@
       <control-flow-case id="__6">
         <from-outcome>callCust</from-outcome>
         <to-activity-id>CustomerDetailTF</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>CommonApplicationTF</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>

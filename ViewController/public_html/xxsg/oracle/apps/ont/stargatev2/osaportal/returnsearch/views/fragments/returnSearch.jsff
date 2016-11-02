@@ -234,7 +234,10 @@
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl26" layout="horizontal" halign="right"
                                inlineStyle="margin-right: 31px; margin-bottom: 3px; display: inline-block; float: right; margin-top: -5px;" valign="top">
-            <af:link text="#{bundle['XXSG_OSA_CANCEL_RETURN']}" id="l6" styleClass="table-action-button"/>
+            <af:link text="#{bundle['XXSG_OSA_CANCEL_RETURN']}" id="l6" styleClass="table-action-button"
+                     useWindow="true" windowEmbedStyle="inlineDocument" windowModalityType="applicationModal"
+                     windowHeight="300" windowWidth="500" action="cancel"
+                     actionListener="#{pageFlowScope.ItemOperations.cancelOrder}"/>
             <af:spacer width="3" height="10" id="s4"/>
             <af:link text="#{bundle['XXSG_OSA_AUTHORIZE']}" id="l5" styleClass="table-action-button"/>
           </af:panelGroupLayout>
@@ -289,7 +292,7 @@
             </af:panelGroupLayout>
           </f:facet>
           <af:column headerText="#{bundle['XXSG_OSA_SEL']}" id="c6" width="4%">
-            <af:selectBooleanCheckbox value="#{row.Selected}" id="sbc1"/>
+            <af:selectBooleanCheckbox value="#{row.Selected}" id="sbc1" autoSubmit="true"/>
           </af:column>
           <af:column headerText="#{bundle['XXSG_OSA_RETURN_TYPE']}" id="c8" width="10%">
             <af:outputText value="#{row.Returntype}" shortDesc="#{bindings.HeaderResultsVO1.hints.Returntype.tooltip}"

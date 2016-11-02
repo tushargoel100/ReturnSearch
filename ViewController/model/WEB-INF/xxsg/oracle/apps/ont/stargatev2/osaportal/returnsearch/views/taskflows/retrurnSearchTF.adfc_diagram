@@ -44,7 +44,7 @@
       <property
          name="fromOutcome">init</property>
       <property
-         name="sdm:polyPoints">R50,344.14505,316.6953,630.355,200.24707,L50</property>
+         name="sdm:polyPoints">R50,343.5,316.6953,631.0,200.24707,L50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall5">
@@ -71,6 +71,35 @@
       <property
          name="fromOutcome">callCust</property>
       <property
-         name="sdm:polyPoints">B50,672.0,254.24707,717.67676,371.7754,T50</property>
+         name="sdm:polyPoints">B50,672.0,254.24707,717.67676,371.4248,T50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall7">
+      <property
+         name="runAsDialog">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CommonApplicationTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">CommonApplicationTF</property>
+      <property
+         name="x">942.02246</property>
+      <property
+         name="y">234.14941</property>
+      <property
+         name="documentReference">/WEB-INF/xxsg/oracle/apps/ont/stargatev2/osaportal/commonapplication/view/taskflows/CommonApplicationTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">CommonApplicationTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View2"
+      to="TaskFlowCall7">
+      <property
+         name="fromOutcome">cancel</property>
+      <property
+         name="sdm:polyPoints">R50,713.0,200.24707,901.02246,233.79883,L50</property>
    </ControlFlowCase>
 </SDM>

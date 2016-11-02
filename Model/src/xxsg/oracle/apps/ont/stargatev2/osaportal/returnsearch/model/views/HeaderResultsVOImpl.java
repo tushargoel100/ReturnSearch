@@ -87,15 +87,15 @@ public class HeaderResultsVOImpl extends ViewObjectImpl {
      * Returns the variable value for p_return_number.
      * @return variable value for p_return_number
      */
-    public BigDecimal getp_return_number() {
-        return (BigDecimal) ensureVariableManager().getVariableValue("p_return_number");
+    public String getp_return_number() {
+        return (String) ensureVariableManager().getVariableValue("p_return_number");
     }
 
     /**
      * Sets <code>value</code> for variable p_return_number.
      * @param value value to bind as p_return_number
      */
-    public void setp_return_number(BigDecimal value) {
+    public void setp_return_number(String value) {
         ensureVariableManager().setVariableValue("p_return_number", value);
     }
 
@@ -119,15 +119,15 @@ public class HeaderResultsVOImpl extends ViewObjectImpl {
      * Returns the variable value for p_client.
      * @return variable value for p_client
      */
-    public Long getp_client() {
-        return (Long) ensureVariableManager().getVariableValue("p_client");
+    public String getp_client() {
+        return (String) ensureVariableManager().getVariableValue("p_client");
     }
 
     /**
      * Sets <code>value</code> for variable p_client.
      * @param value value to bind as p_client
      */
-    public void setp_client(Long value) {
+    public void setp_client(String value) {
         ensureVariableManager().setVariableValue("p_client", value);
     }
 

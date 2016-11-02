@@ -406,6 +406,7 @@
                <list n="classPath">
                   <url path="../../library/StargateSharedComponents.jar" jar-entry=""/>
                   <url path="../../library/OSACustomerDetail.jar" jar-entry=""/>
+                  <url path="../../library/CommonApplication.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="ADF Library"/>
