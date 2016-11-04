@@ -253,40 +253,46 @@
                   rowSelection="single" fetchSize="#{bindings.HeaderResultsVO1.rangeSize}" id="t3"
                   columnStretching="multiple" styleClass="AFStretchWidth result-table"
                   selectionListener="#{bindings.HeaderResultsVO1.treeModel.makeCurrent}" scrollPolicy="page"
-                  rowBandingInterval="0">
+                  rowBandingInterval="1" columnBandingInterval="0">
           <f:facet name="detailStamp">
             <af:panelGroupLayout id="pgl50" layout="vertical" styleClass="AFStretchWidth">
               <af:iterator id="i1" var="attr" rows="-1" value="#{row.Lines}">
                 <af:masonryLayout id="ml6" styleClass="AFStretchWidth">
                   <af:panelGroupLayout id="pgl45" layout="horizontal"
                                        inlineStyle="display:inline-block; min-width:12%; padding:2px; margin:0px;">
-                    <af:outputFormatted value="#{bundle['XXSG_OSA_REASON_RETURN']} : " id="of11"/>
-                    <af:outputFormatted value="#{attr.ReturnReason}" id="of12"/>
+                    <af:outputFormatted value="#{bundle['XXSG_OSA_REASON_RETURN']} : " id="of11"
+                                        styleClass="additional-info"/>
+                    <af:outputFormatted value="#{attr.ReturnReason}" id="of12" styleClass="additional-info"/>
                   </af:panelGroupLayout>
                   <af:panelGroupLayout id="pgl46" layout="horizontal"
                                        inlineStyle="display:inline-block; min-width:12%; padding:2px; margin:0px;">
-                    <af:outputFormatted value="#{bundle['XXSG_OSA_SKU_NUM']} : " id="of13"/>
-                    <af:outputFormatted value="#{attr.SkuNumber}" id="of3"/>
+                    <af:outputFormatted value="#{bundle['XXSG_OSA_SKU_NUM']} : " id="of13"
+                                        styleClass="additional-info"/>
+                    <af:outputFormatted value="#{attr.SkuNumber}" id="of3" styleClass="additional-info"/>
                   </af:panelGroupLayout>
                   <af:panelGroupLayout id="pgl47" layout="horizontal"
                                        inlineStyle="display:inline-block; min-width:12%; padding:2px; margin:0px;">
-                    <af:outputFormatted value="#{bundle['XXSG_OSA_INVOICE_NUMBER']} : " id="of15"/>
-                    <af:outputFormatted value="#{attr.InvoiceNumber}" id="of16"/>
+                    <af:outputFormatted value="#{bundle['XXSG_OSA_INVOICE_NUMBER']} : " id="of15"
+                                        styleClass="additional-info"/>
+                    <af:outputFormatted value="#{attr.InvoiceNumber}" id="of16" styleClass="additional-info"/>
                   </af:panelGroupLayout>
                   <af:panelGroupLayout id="pgl144" layout="horizontal"
                                        inlineStyle="display:inline-block; min-width:12%; padding:2px; margin:0px;">
-                    <af:outputFormatted value="#{bundle['XXSG_OSA_WEB_USER_ID']} : " id="of10"/>
-                    <af:outputFormatted value="#{attr.WebUserId}" id="of9"/>
+                    <af:outputFormatted value="#{bundle['XXSG_OSA_WEB_USER_ID']} : " id="of10"
+                                        styleClass="additional-info"/>
+                    <af:outputFormatted value="#{attr.WebUserId}" id="of9" styleClass="additional-info"/>
                   </af:panelGroupLayout>
                   <af:panelGroupLayout id="pgl48" layout="horizontal"
                                        inlineStyle="display:inline-block; min-width:12%; padding:2px; margin:0px;">
-                    <af:outputFormatted value="#{bundle['XXSG_OSA_SHIP_METHOD']} : " id="of17"/>
-                    <af:outputFormatted value="#{attr.ShippingMethod}" id="of18"/>
+                    <af:outputFormatted value="#{bundle['XXSG_OSA_SHIP_METHOD']} : " id="of17"
+                                        styleClass="additional-info"/>
+                    <af:outputFormatted value="#{attr.ShippingMethod}" id="of18" styleClass="additional-info"/>
                   </af:panelGroupLayout>
                   <af:panelGroupLayout id="pgl49" layout="horizontal"
                                        inlineStyle="display:inline-block; min-width:12%; padding:2px; margin:0px;">
-                    <af:outputFormatted value="#{bundle['XXSG_OSA_SHIP_ADDR']} : " id="of19"/>
-                    <af:outputFormatted value="#{attr.ShippingAddress}" id="of20"/>
+                    <af:outputFormatted value="#{bundle['XXSG_OSA_SHIP_ADDR']} : " id="of19"
+                                        styleClass="additional-info"/>
+                    <af:outputFormatted value="#{attr.ShippingAddress}" id="of20" styleClass="additional-info"/>
                   </af:panelGroupLayout>
                 </af:masonryLayout>
               </af:iterator>

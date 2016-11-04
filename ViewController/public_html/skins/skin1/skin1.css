@@ -13,7 +13,8 @@ REVISIONS:
    1.6          27/10/2016      DushyantK        7.for Order que
    1.7          01/11/2016      DushyantK        8.Common components 
    1.8          04/11/2016      PriyankK        StargateV2 component identified 
-   1.9          04/11/2016      DushyantK       Added Skin for Osa Home Page Quick search lov(item,Order,Client)                    
+   1.9          04/11/2016      DushyantK       Added Skin for Osa Home Page Quick search lov(item,Order,Client)
+   1.10			04/11/2016      SumitA          Added skin for transmission queue   
 */
 
 @charset "UTF-8";
@@ -163,15 +164,6 @@ af|panelAccordion::header {
     padding: 0px 0px 0px 0px;
 }
 
-af|table::data-table-VH-lines af|column::data-cell {
-    background-color: #F1F1F1;
-    height: 35px;
-    font-size: 11px;
-    border: white 1px solid;
-    padding-right: 0px;
-}
-
-
 af|inputDate::label {
     color: #717171;
 }
@@ -185,9 +177,9 @@ af|inputDate::label {
 }
 
 af|table::data-table-VH-lines af|column::data-cell {
-    background-color: #F1F1F1;
+    background-color: #FFFFFF;
     height: 30px;
-    font-size: 11px;
+    font-size: 12px;
     border: white 1px solid;
     padding-right: 0px;
 }
@@ -674,7 +666,14 @@ background-image: none;
 }
 /*1.9 End here*/
 
-
+/*1.10 Start here*/
+/*Transmission Queue Start here*/
+af|table.transmission-que-col-header af|column::column-header-cell {
+       font-size: 16px;
+    
+}
+/*1.10 End here*/
+/*Transmission Queue End here*/
 af|button.actionButton {
     width: 20px;
     font-family: 'ArialNarrow'; 

@@ -15,7 +15,9 @@ REVISIONS:
    1.8          01/11/2016      Vinay            9. Added class for item search popup
    1.9          02/11/2016      Tushar Goel      10. Order Detail Tab Classes Modified
    1.10         03/11/2016      Vinay      	11. rma search added application name
-   
+   1.11         04/11/2016      DushyantK       12  Osa home page Quick Lov Search Size
+   1.12         04/11/2016      Sumit           13. Transmission Queue page CSS Addes
+   1.13         04/11/2016      PriyankK        modified for queue detail app
  */
 
 @charset "UTF-8";
@@ -119,12 +121,13 @@ remove_underline:hover {
 }
 
 /* clear all button in search page and is used on a link */
-a.clear-all{
+a.clear-all,
+a.clear-all:hover, 
+a.clear-all:hover:focus{
     color: #707070;
     text-transform: uppercase;
     line-height: 43px;
     font-size: 12px;
-    font-family: "ArialNarrow";
 }
 
 /* common components end*/
@@ -219,7 +222,9 @@ header-logout-link {
 }
 
 .header-right-wrapper .header-right-content .header-search-cell-first input {
-    max-width: 120px !important;
+/*Modified 1.11*/
+    max-width: 110px !important;
+/*Modified 1.11*/
 }
 
 .header-right-wrapper .header-right-content .header-search-input input {
@@ -253,9 +258,22 @@ a.remove-line, a.remove-line span {
     text-decoration: underline;
     color: #949595;
 }
+
 /* return search start */
-.return-search-app .input-box {
+
+.return-search-app .group-text-area{
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.return-search-app .input-box,
+.return-search-app .input-date {
     margin-top: 3px;
+}
+
+.return-search-app .input-box .xu,
+.return-search-app .input-box .x12 {
+    padding: 0px 6px 0px 0px;
 }
 
 .return-search-app .input-box input,
@@ -293,8 +311,8 @@ a.remove-line, a.remove-line span {
     padding: 15px 15px;
 }
 
-.return-search-app  .search-bar {
-    padding: 18px 31px 16px 16px;
+.return-search-app .search-bar {
+    padding: 0px 31px 16px 16px;
     border-bottom: #fff 5px solid;
 }
 
@@ -320,9 +338,15 @@ a.remove-line, a.remove-line span {
     text-align: center;
 }
 
+.return-search-app .additional-info {
+    font-size: 10px;
+    color: #949495;
+}
+
 .return-search-app hr.x1j {
     border-bottom: none;
 }
+
 /* return search end*/
 .searchFilter td {
     display: inline-block;
@@ -499,7 +523,7 @@ a.remove-line, a.remove-line span {
 }
 
 .search-filter-value {
-    padding: 10px 0;
+    padding: 10px 0px;
 }
 
 .table-popup-link, .table-popup-link:hover {
@@ -922,7 +946,8 @@ line-height: 29px;
     min-height: 675px;
 }
 /*1.6 start here*/
-.osaDashBoardActiveFilters1{
+/*1.13 start here */
+.osaDashBoardActiveFilters1, .queue-detail-active-filter1{
 font-size:15px;
 font-family: "ArialNarrow"; 
 color:#323232;
@@ -931,20 +956,22 @@ display:inline-block;
 margin-left:5px;
 }
 
-.osaDashBoardActiveFilters2{
+.osaDashBoardActiveFilters2, .queue-detail-active-filter2{
 font-size:15px;
 font-family: "ArialNarrow"; 
 color:#323232;
 text-align:left; 
 }
 
-.osaDashBoardActiveFilters3{
+.osaDashBoardActiveFilters3, .queue-detail-active-filter3{
 font-size:15px;
 font-family: "ArialNarrow"; 
 color:#323232;
 text-align:left; 
 }
+/*1.13 end here */
 /*1.6 end here */
+
 .AlignOutputText{
 
 color: #FFFFFF;
@@ -1046,3 +1073,32 @@ font-family:''ArialNarrow'';
 
 /*Dashboard end here*/
 
+/*Transmission Queue start here*/
+/*1.12 start here*/
+
+.transmissionQueueActiveFilters1{
+font-size:15px;
+font-family: "ArialNarrow"; 
+color:#323232;
+text-align:left; 
+margin-left:2px;
+}
+
+.transmissionQueueActiveFilters2{
+font-size:15px;
+font-family: "ArialNarrow"; 
+color:#323232;
+text-align:left; 
+margin-left:20px;
+padding-right:5px;
+}
+.transmission-queue-search-filter-value {
+    padding: 10px 0;
+}
+.transmission-queue-filter-cross img {
+    position: relative;
+    bottom: 6px;
+    width: 15px;
+}
+/*1.12 end here*/
+/*Transmission Queue end here*/
