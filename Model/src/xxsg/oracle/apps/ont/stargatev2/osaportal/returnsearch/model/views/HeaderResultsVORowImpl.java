@@ -402,7 +402,7 @@ public class HeaderResultsVORowImpl extends ViewRowImpl {
      */
     public void setSelected(String value) {
         setAttributeInternal(SELECTED, value);
-        System.out.println("this is vinay --> " + value);
+        System.out.println("LOG_INFO : checkbox value --> " + value);
     }
 
     /**

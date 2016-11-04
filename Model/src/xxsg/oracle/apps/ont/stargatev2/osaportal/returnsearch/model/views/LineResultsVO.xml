@@ -18,31 +18,31 @@
         ResId="xxsg.oracle.apps.ont.stargatev2.osaportal.returnsearch.model.views.LineResultsVO_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[select distinct oel.header_id,		              
-        oel.RETURN_REASON_CODE as return_reason_code,              
-        (select meaning               
-            from fnd_lookup_values              
-            where LOOKUP_TYPE(+) = 'CREDIT_MEMO_REASON'              
-            AND LANGUAGE = USERENV ('LANG')              
-            and attribute2 is not null              
-            and lookup_code = oel.return_reason_code              
-        ) return_reason,              
-        ship_method.meaning shipping_method,                
-        oel.ordered_item sku_number,              
-        xxstar_osa_util.get_order_shipto_addr (oel.header_id,                
-                                              hca.party_id                
-                                             ) shipping_address,              
-        xxstar_osa_util.get_invoice_number (oeh.order_number, oel.org_id) invoice_number,            
-        hca.attribute4 web_user_id              
-        from               
-            hz_cust_accounts hca,              
-            oe_ship_methods_v ship_method,              
-            oe_order_lines_all oel, 
-            oe_order_headers_all oeh  
-        where 1=1                                        
-            AND oel.sold_to_org_id = hca.cust_account_id(+)               
-            AND oel.shipping_method_code = ship_method.lookup_code(+)              
-            AND ship_method.lookup_type(+) = 'SHIP_METHOD' 
+  <SQLQuery><![CDATA[select distinct oel.header_id,		               
+        oel.RETURN_REASON_CODE as return_reason_code,               
+        (select meaning                
+            from fnd_lookup_values               
+            where LOOKUP_TYPE(+) = 'CREDIT_MEMO_REASON'               
+            AND LANGUAGE = USERENV ('LANG')               
+            and attribute2 is not null               
+            and lookup_code = oel.return_reason_code               
+        ) return_reason,               
+        ship_method.meaning shipping_method,                 
+        oel.ordered_item sku_number,               
+        xxstar_osa_util.get_order_shipto_addr (oel.header_id,                 
+                                              hca.party_id                 
+                                             ) shipping_address,               
+        xxstar_osa_util.get_invoice_number (oeh.order_number, oel.org_id) invoice_number,             
+        hca.attribute4 web_user_id               
+        from                
+            hz_cust_accounts hca,               
+            oe_ship_methods_v ship_method,               
+            oe_order_lines oel,  
+            oe_order_headers oeh   
+        where 1=1                                         
+            AND oel.sold_to_org_id = hca.cust_account_id(+)                
+            AND oel.shipping_method_code = ship_method.lookup_code(+)               
+            AND ship_method.lookup_type(+) = 'SHIP_METHOD'  
             AND oeh.header_id = oel.header_id]]></SQLQuery>
   <ViewAttribute
     Name="HeaderId"

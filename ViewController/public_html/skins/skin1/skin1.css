@@ -8,7 +8,12 @@ REVISIONS:
    1.1			24/10/2016		ToshahnvieM 	 2. Common components identified
    1.2			25/10/2016		ToshahnvieM 	 3. Customer Search components identified
    1.3			25/10/2016		ToshahnvieM 	 4. Customer Detail components identified
-   1.4			25/10/2016		Vinay			 5. RMA search and Item Search components identified
+   1.4			25/10/2016		Vinay		     5. RMA search and Item Search components identified
+   1.5          26/10/2016      DushyantK        6.Commented xtp class
+   1.6          27/10/2016      DushyantK        7.for Order que
+   1.7          01/11/2016      DushyantK        8.Common components 
+   1.8          04/11/2016      PriyankK        StargateV2 component identified 
+   1.9          04/11/2016      DushyantK       Added Skin for Osa Home Page Quick search lov(item,Order,Client)                    
 */
 
 @charset "UTF-8";
@@ -268,15 +273,15 @@ af|inputComboboxListOfValues::dropdown-icon-style {
 .x186:hover {
     background-image: url("../../image/icon/plus-2-16.png")!important;
 }
-
+/*1.5
 .xtp, .xtq {
     vertical-align: middle;
     margin: 6px 3px 0px 2px;
-    /* padding: 15px; */
+     padding: 15px; 
 
     width: 50px;
 }
-
+*/
 .x25.p_AFSelected {
     width: 200px;
 }
@@ -444,7 +449,11 @@ margin-right:15px;
     }
 }
 
-
+/*1.7 */
+.AFButton:alias {
+  max-height: 28px;
+}
+/*1.7*/
 af|inputListOfValues.customer::search-icon-style:disabled, af|inputListOfValues.customer::search-icon-style:disabled:hover, af|inputListOfValues.customer::search-icon-style:disabled:active {
     background-image: url("../../image/icon/plus-2-16.png");
 }
@@ -561,6 +570,10 @@ af|button.table:hover::text {
 /* 008 Customer Detail end*/
 
 /*modified on 12-10/2016*/
+
+
+/* 1.8*/
+/*001 Home page start */
 @agent gecko and (max-version:18) {
     af|inputColor.darkColor::content:-moz-placeholder, af|inputComboboxListOfValues.darkColor::content:-moz-placeholder, af|inputDate.darkColor::content:-moz-placeholder, af|inputListOfValues.darkColor::content:-moz-placeholder, af|selectOneChoice.darkColor::content:-moz-placeholder, af|inputNumberSpinbox.darkColor::content:-moz-placeholder, af|inputText.darkColor::content:-moz-placeholder {
         color: #bcbabb;
@@ -588,6 +601,7 @@ af|button.table:hover::text {
     }
 	}
 
+/*001 Home page end*/
 
 
 .colorfulAccordian1 af|panelAccordion::header-toolbar {
@@ -595,7 +609,7 @@ af|button.table:hover::text {
 }
 
 
-
+/*Order que page start here*/
 
 af|table.popup-table af|column::column-header-cell 
 {  
@@ -605,6 +619,61 @@ color: #FFFFFF;
 font-family: ''Arial narrow''; 
  height: 20px;
 }
+
+
+.Order-queue-lov af|inputListOfValues::search-icon-style {
+    height: 45px;
+    color: #323232;
+    width: 45px;
+    background-image: url("../../image/icon/search_lov_icon.png");
+    padding: 10px 10px 10px 10px;
+    background-color: #FFFFFF;
+}
+
+.Order-queue-lov af|inputListOfValues::search-icon-style:hover {
+    height: 45px;
+    padding: 10px 10px 10px 10px;
+    width: 45px;
+    background-color: #FFF;
+}
+
+.Order-queue-lov af|inputListOfValues::content {
+    color: #323232;
+    height: 45px;
+    width: 260PX;
+    background-color: #FFFFFF;
+}
+
+af|table.order-que-col-header af|column::column-header-cell {
+    background-color: #404040;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-family: "ArialNarrow";
+    font-weight: normal;
+    border-right: #FFFFFF 1px solid;
+    height: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+
+
+/*Order que page end here*/
+
+/*1.9 Start here*/
+
+
+
+.osa-home-lov af|inputListOfValues::search-icon-style {
+display: none;
+background-image: none; 
+}
+.osa-home-lov af|inputListOfValues::search-icon-style:hover {
+   display: none;
+   background-image: none; 
+}
+/*1.9 End here*/
+
 
 af|button.actionButton {
     width: 20px;

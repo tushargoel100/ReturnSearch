@@ -18,7 +18,7 @@ public class ItemOperations {
 
     public void setParam_header_id(String param_header_id) {
         this.param_header_id = param_header_id;
-        System.out.println("this is vinay ->> " + param_header_id);
+        System.out.println("LOG_INFO : passing header ID ->> " + param_header_id);
     }
 
     public String getParam_header_id() {
@@ -27,11 +27,8 @@ public class ItemOperations {
     
     private void setHeaderId(){
         String headerId = null;
-        DCIteratorBinding iterBind = ADFUtils.findIterator("HeaderResultsVO1Iterator");
-            ViewObject vo = iterBind.getViewObject();
-        RowSetIterator rsIterator = vo.createRowSetIterator(null);
-        rsIterator.reset();
-        Row[] filteredrows = rsIterator.getFilteredRows("Selected", "true");
+        ViewObject vo = ADFUtils.findIterator("HeaderResultsVO1Iterator").getViewObject();
+        Row[] filteredrows = vo.getFilteredRows("Selected", "true");
         for(int i = 0; i < filteredrows.length; i++){
             HeaderResultsVORowImpl row = (HeaderResultsVORowImpl) filteredrows[i];
             if(headerId == null)
@@ -47,4 +44,5 @@ public class ItemOperations {
         setHeaderId();
         return "cancel";
     }
+    
 }
